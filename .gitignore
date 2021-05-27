@@ -1,0 +1,7 @@
+/node_modules
+lib
+guide.sh
+/dist-docs
+*~
+.yalc
+yalc.lock
