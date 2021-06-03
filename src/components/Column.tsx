@@ -82,12 +82,12 @@ Col.props = {
   dimensions: {
     size: {
       type: PropTypes.Array,
-      default: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12],
+      default: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       editor: EditorTypes.Combo
     },
     offset: {
       type: PropTypes.Array,
-      default: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12],
+      default: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       editor: EditorTypes.Combo
     }
   },
