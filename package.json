@@ -1,6 +1,6 @@
 {
   "name": "@sitecloud/components",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "description": "",
   "main": "lib/index.umd.js",
   "module": "lib/index.es.js",
