@@ -39,6 +39,7 @@ const Image: Component<{ image: string }> = ({ image, ...props }) => (
   <Container {...props} src={image || DEFAULT_IMAGE} />
 );
 
+Image.paddable = true;
 Image.canReceive = [];
 Image.props = {
   image: {
