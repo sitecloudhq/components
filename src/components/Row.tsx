@@ -38,9 +38,15 @@ const Container = styled(DefaultRow)<Props>`
   })}
 `;
 
-const Row: Component<HTMLElement> = forwardRef(({ children, ...props }) => {
-  return <Container {...props}>{children}</Container>;
-});
+const Row: Component<HTMLElement> = forwardRef(
+  ({ children, ...props }, ref) => {
+    return (
+      <Container ref={ref} {...props}>
+        {children}
+      </Container>
+    );
+  }
+);
 
 Row.icon = <Icon size="1.6rem" />;
 Row.canReceive = ['Column'];
