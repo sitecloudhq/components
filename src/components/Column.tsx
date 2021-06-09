@@ -48,7 +48,10 @@ const falltroughValues = (value: any) =>
       }, [])
     : value;
 
-const Col: Component<{ size: any; offset: any }> = ({ children, ...props }) => {
+const Col: Component<{ size?: any; offset?: any }> = ({
+  children,
+  ...props
+}) => {
   const sizes = falltroughValues(props.size);
   const sizeProps = Array.isArray(sizes)
     ? {
