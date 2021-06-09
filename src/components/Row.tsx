@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Row as DefaultRow } from 'react-styled-flexboxgrid';
 import styled from 'styled-components';
 import { ViewHeadline as Icon } from 'styled-icons/material';
@@ -13,7 +13,9 @@ import {
 } from '../utils';
 import { Component } from '../Component';
 
-const Container = styled(DefaultRow)`
+type Props = {} & React.ComponentProps<typeof DefaultRow>;
+
+const Container = styled(DefaultRow)<Props>`
   ${(props: any) => props.styled};
   background-position: center;
   background-image: ${(props: any) =>
@@ -36,9 +38,9 @@ const Container = styled(DefaultRow)`
   })}
 `;
 
-const Row: Component = ({ children, ...props }) => {
+const Row: Component<HTMLElement> = forwardRef(({ children, ...props }) => {
   return <Container {...props}>{children}</Container>;
-};
+});
 
 Row.icon = <Icon size="1.6rem" />;
 Row.canReceive = ['Column'];
@@ -60,7 +62,7 @@ Row.props = {
   alignments: {
     horizontal: {
       type: PropTypes.Array,
-      default: Object.keys(justifyContentValues).filter((x) => x !== 'stretch'),
+      default: Object.keys(justifyContentValues).filter(x => x !== 'stretch'),
       editor: EditorTypes.Combo
     },
     vertical: {
