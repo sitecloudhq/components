@@ -8,7 +8,7 @@ import Main from './components/Main';
 import Link from './components/Link';
 import Button from './components/Button';
 import { PropTypes, EditorTypes } from './types';
-import { styleProps } from './utils';
+import { styleProps, falltroughValues } from './utils';
 import { Component } from './Component';
 
 export {
@@ -24,5 +24,6 @@ export {
   Image,
   Button,
   Link,
-  styleProps
+  styleProps,
+  falltroughValues
 };

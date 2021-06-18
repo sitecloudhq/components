@@ -6,7 +6,7 @@ import { breakpoints, breakpointKeys, breakpointStyles } from './breakpoints';
 const rectToProp = PropTypes.Rect.toProp;
 const toProp = PropTypes.UnitValue.toProp;
 
-const parseProp = (prop) => {
+const parseProp = prop => {
   if (!prop) return undefined;
 
   if (
@@ -31,13 +31,13 @@ const parseProp = (prop) => {
   }
 };
 
-const parseBreakpoints = (prop) =>
+const parseBreakpoints = prop =>
   breakpointKeys.reduce((acc, b, idx) => {
     acc[b] = parseProp(prop[idx]);
     return acc;
   }, {});
 
-const getAttrName = (option) => {
+const getAttrName = option => {
   if (typeof option === 'object') {
     if (!option.attr) throw `styleProps option without 'attr' field`;
     return option.attr;
@@ -49,7 +49,7 @@ const getAttrName = (option) => {
 const getStyle = (value, option) =>
   option.transform ? option.transform(value) : value;
 
-export const styleProps = (opt) => (props) => {
+export const styleProps = opt => props => {
   const _props = Object.keys(props).reduce((acc, pk) => {
     if (Array.isArray(props[pk])) {
       acc[pk] = parseBreakpoints(props[pk]);
@@ -63,7 +63,7 @@ export const styleProps = (opt) => (props) => {
     if (!_props[name]) return media;
 
     Object.keys(breakpointStyles).forEach(
-      (bp) =>
+      bp =>
         (media[bp] = {
           ...media[bp],
           [getAttrName(opt[name])]: getStyle(_props[name][bp], opt[name])
@@ -78,14 +78,12 @@ export const styleProps = (opt) => (props) => {
   }, {});
 
   return css`
-    ${Object.keys(opt).map((key) =>
+    ${Object.keys(opt).map(key =>
       _props[key]
         ? { [getAttrName(opt[key])]: getStyle(_props[key]._, opt[key]) }
         : null
     )}
-    ${Object.keys(breakpointStyles).map((bp) =>
-      breakpointStyles[bp](media[bp])
-    )}
+    ${Object.keys(breakpointStyles).map(bp => breakpointStyles[bp](media[bp]))}
   `;
 };
 
@@ -107,8 +105,20 @@ export const alignItemsValues = {
   initial: 'initial'
 };
 
-export const parseAlignItems = (value) =>
+export const parseAlignItems = value =>
   value && alignItemsValues[value.toLowerCase()];
 
-export const parseJustifyContent = (value) =>
+export const parseJustifyContent = value =>
   value && justifyContentValues[value.toLowerCase()];
+
+export const falltroughValues = (value, defaultSize = 4) => {
+  if (!Array.isArray(value)) return value;
+
+  while (value.length < defaultSize) {
+    value.push(undefined);
+  }
+  return value.reduce((acc, curr, idx) => {
+    acc.push(curr != undefined ? curr : acc[idx - 1]);
+    return acc;
+  }, []);
+};

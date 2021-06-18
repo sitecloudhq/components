@@ -9,7 +9,8 @@ import {
   alignItemsValues,
   justifyContentValues,
   parseAlignItems,
-  parseJustifyContent
+  parseJustifyContent,
+  falltroughValues
 } from '../utils';
 import { Component } from '../Component';
 
@@ -40,14 +41,6 @@ const Container = styled(DefaultCol)`
   })}
 `;
 
-const falltroughValues = (value: any) =>
-  Array.isArray(value)
-    ? value.reduce((acc, curr, idx) => {
-        acc.push(curr || acc[idx - 1]);
-        return acc;
-      }, [])
-    : value;
-
 const Col: Component<{ size?: any; offset?: any }> = ({
   children,
   ...props
@@ -55,20 +48,20 @@ const Col: Component<{ size?: any; offset?: any }> = ({
   const sizes = falltroughValues(props.size);
   const sizeProps = Array.isArray(sizes)
     ? {
-        ...(sizes[3] && { xs: sizes[3] }),
-        ...(sizes[2] && { sm: sizes[2] }),
-        ...(sizes[1] && { md: sizes[1] }),
-        ...(sizes[0] && { lg: sizes[0] })
+        ...(sizes[3] !== undefined && { xs: sizes[3] }),
+        ...(sizes[2] !== undefined && { sm: sizes[2] }),
+        ...(sizes[1] !== undefined && { md: sizes[1] }),
+        ...(sizes[0] !== undefined && { lg: sizes[0] })
       }
     : { xs: sizes };
 
   const offsets = falltroughValues(props.offset);
   const offsetProps = Array.isArray(offsets)
     ? {
-        ...(offsets[3] && { xsOffset: offsets[3] }),
-        ...(offsets[2] && { smOffset: offsets[2] }),
-        ...(offsets[1] && { mdOffset: offsets[1] }),
-        ...(offsets[0] && { lgOffset: offsets[0] })
+        ...(offsets[3] !== undefined && { xsOffset: offsets[3] }),
+        ...(offsets[2] !== undefined && { smOffset: offsets[2] }),
+        ...(offsets[1] !== undefined && { mdOffset: offsets[1] }),
+        ...(offsets[0] !== undefined && { lgOffset: offsets[0] })
       }
     : { xsOffset: offsets };
 
