@@ -47,12 +47,12 @@ const H1 = styled.h1`
 `;
 
 const headings: any = {
-  Header: H1,
-  'Title 1': H2,
-  'Title 2': H3,
-  'Subtitle 1': H4,
-  'Subtitle 2': H5,
-  'Subtitle 3': H6
+  'Heading 1': H1,
+  'Heading 2': H2,
+  'Heading 3': H3,
+  'Heading 4': H4,
+  'Heading 5': H5,
+  'Heading 6': H6
 };
 
 const defaultHeading = 'Header';
