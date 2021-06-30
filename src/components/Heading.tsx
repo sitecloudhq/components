@@ -34,11 +34,9 @@ const H4 = styled.h4`
 
 const H3 = styled.h3`
   ${setBase}
-  font-style: italic;
 `;
 
 const H2 = styled.h2`
-  color: ${theme.colors.black400};
   ${setBase}
 `;
 
@@ -55,7 +53,16 @@ const headings: any = {
   'Heading 6': H6
 };
 
-const defaultHeading = 'Header';
+const defaultProps: any = {
+  'Heading 1': { ...PropTypes.FontDefaultOptions, size: '32px', weight: 600 },
+  'Heading 2': { ...PropTypes.FontDefaultOptions, size: '24px', weight: 600 },
+  'Heading 3': { ...PropTypes.FontDefaultOptions, size: '18px', weight: 600 },
+  'Heading 4': { ...PropTypes.FontDefaultOptions, size: '16px', weight: 600 },
+  'Heading 5': { ...PropTypes.FontDefaultOptions, size: '14px', weight: 600 },
+  'Heading 6': { ...PropTypes.FontDefaultOptions, size: '12px', weight: 600 }
+};
+
+const defaultHeading = 'Heading 1';
 
 const Heading: Component<{
   as: string;
@@ -89,7 +96,10 @@ Heading.props = {
   font: {
     font: {
       type: PropTypes.Font,
-      default: PropTypes.FontDefaultOptions,
+      default: (props: any) => {
+        if (!props || !props.as) return PropTypes.FontDefaultOptions;
+        return defaultProps[props.as];
+      },
       editor: {
         type: EditorTypes.Font,
         showTitle: false
