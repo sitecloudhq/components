@@ -1,4 +1,4 @@
-import Section from './components/Section';
+import Container from './components/Container';
 import Column from './components/Column';
 import Row from './components/Row';
 import Heading from './components/Heading';
@@ -16,7 +16,7 @@ export {
   PropTypes,
   EditorTypes,
   Main,
-  Section,
+  Container,
   Column,
   Row,
   Heading,

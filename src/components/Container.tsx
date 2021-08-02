@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Texture as Icon } from '@styled-icons/material/Texture';
+import { CropSquare as Icon } from '@styled-icons/material/CropSquare';
 
 import { EditorTypes, PropTypes } from '../types';
 import {
@@ -12,7 +12,7 @@ import {
 } from '../utils';
 import { Component } from '../Component';
 
-const Container = styled.section`
+const FlexContainer = styled.section`
   ${(props: any) => props.styled}
   display: flex;
   flex-wrap: wrap;
@@ -45,12 +45,12 @@ const Container = styled.section`
   })}
 `;
 
-const Section: Component = ({ children, ...props }) => {
-  return <Container {...props}>{children}</Container>;
+const Container: Component = ({ children, ...props }) => {
+  return <FlexContainer {...props}>{children}</FlexContainer>;
 };
 
-Section.paddable = true;
-Section.props = {
+Container.paddable = true;
+Container.props = {
   stack: {
     stack: {
       type: PropTypes.Array,
@@ -139,6 +139,6 @@ Section.props = {
   }
 };
 
-Section.icon = <Icon size="1.6rem" />;
+Container.icon = <Icon size="1.6rem" />;
 
-export default Section;
+export default Container;

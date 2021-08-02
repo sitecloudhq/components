@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { withKnobs, color, number } from '@storybook/addon-knobs';
-import Section from '../src/components/Section';
+import Container from '../src/components/Container';
 
 export default {
-  title: 'Section',
-  component: Section,
+  title: 'Container',
+  component: Container,
   decorators: [withKnobs]
 };
 
-export const section = () => <Section>This is a section</Section>;
+export const container = () => <Container>Flexbox container</Container>;
