@@ -24,13 +24,14 @@ const Container = styled.img`
       ? `${shadowHorizontal} ${shadowVertical} ${blur} ${spread} ${shadowColor}`
       : 'none'};
 
-${styleProps({
-  opacity: 'opacity',
-  roundCorners: 'border-radius',
-  width: 'width',
-  padding: 'padding',
-  margin: 'margin'
-})}
+  ${styleProps({
+    opacity: 'opacity',
+    roundCorners: 'border-radius',
+    width: 'width',
+    height: 'height',
+    padding: 'padding',
+    margin: 'margin'
+  })}
 `;
 
 const DEFAULT_IMAGE = '/default-image.png';
@@ -57,15 +58,23 @@ Image.props = {
     default: '100%',
     editor: {
       type: EditorTypes.UnitValue,
-      options: [PropTypes.UnitValue.px, PropTypes.UnitValue.percentage]
+      options: [
+        PropTypes.UnitValue.px,
+        PropTypes.UnitValue.percentage,
+        PropTypes.UnitValue.auto
+      ]
     }
   },
   height: {
     type: PropTypes.UnitValue,
-    default: '100%',
+    default: 'auto',
     editor: {
       type: EditorTypes.UnitValue,
-      options: [PropTypes.UnitValue.px, PropTypes.UnitValue.percentage]
+      options: [
+        PropTypes.UnitValue.px,
+        PropTypes.UnitValue.percentage,
+        PropTypes.UnitValue.auto
+      ]
     }
   },
   padding: {
