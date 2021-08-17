@@ -5,15 +5,21 @@ export const URL = globalThis.URL;
 
 export class UnitValue {
   constructor(value) {
-    const parsed = value && value.match(/(^.*)(\%|em|rem|px|deg)/i);
-    if (parsed) {
-      this.value = parsed[1];
-      this.unit = parsed[2];
+    if (value === 'auto') {
+      this.value = 0;
+      this.unit = 'auto';
+    } else {
+      const parsed = value && value.match(/(^.*)(\%|em|rem|px|deg)/i);
+      if (parsed) {
+        this.value = parsed[1];
+        this.unit = parsed[2];
+      }
     }
   }
 
   toString() {
-    return `${this.value}${this.unit}`;
+    if (this.unit === 'auto') return 'auto';
+    else return `${this.value}${this.unit}`;
   }
 
   static get px() {
@@ -26,6 +32,10 @@ export class UnitValue {
 
   static get deg() {
     return 'deg';
+  }
+
+  static get auto() {
+    return 'auto';
   }
 }
 
