@@ -55,7 +55,7 @@ Image.props = {
   },
   width: {
     type: PropTypes.UnitValue,
-    default: '100%',
+    default: 'auto',
     editor: {
       type: EditorTypes.UnitValue,
       options: [
