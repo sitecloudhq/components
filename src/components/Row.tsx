@@ -22,6 +22,7 @@ const Container = styled(DefaultRow)<Props>`
     props.backgroundImage ? `url(${props.backgroundImage})` : null};
 
   ${styleProps({
+    width: 'width',
     height: 'min-height',
     padding: 'padding',
     margin: 'margin',
@@ -54,21 +55,35 @@ Row.paddable = true;
 
 Row.props = {
   dimensions: {
+    width: {
+      type: PropTypes.UnitValue,
+      default: '100%',
+      editor: {
+        type: EditorTypes.UnitValue,
+        options: [
+          PropTypes.UnitValue.px,
+          PropTypes.UnitValue.percentage,
+          PropTypes.UnitValue.auto
+        ]
+      }
+    },
     height: {
       type: PropTypes.UnitValue,
       default: '32px',
       editor: {
         type: EditorTypes.UnitValue,
-        options: [PropTypes.UnitValue.px, PropTypes.UnitValue.percentage]
-      },
-      required: false,
-      enabled: true
+        options: [
+          PropTypes.UnitValue.px,
+          PropTypes.UnitValue.percentage,
+          PropTypes.UnitValue.auto
+        ]
+      }
     }
   },
   alignments: {
     horizontal: {
       type: PropTypes.Array,
-      default: Object.keys(justifyContentValues).filter(x => x !== 'stretch'),
+      default: Object.keys(justifyContentValues).filter((x) => x !== 'stretch'),
       editor: EditorTypes.Combo
     },
     vertical: {
