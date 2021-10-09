@@ -16,9 +16,7 @@ const FlexContainer = styled.section`
   ${(props: any) => props.styled}
   display: flex;
   flex-wrap: wrap;
-
   background-position: center;
-
   ${styleProps({
     padding: 'padding',
     margin: 'margin',
