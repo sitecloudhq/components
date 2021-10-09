@@ -6,15 +6,16 @@ import {
   styleProps,
   alignItemsValues,
   justifyContentValues,
+  flexWrapValues,
   parseAlignItems,
-  parseJustifyContent
+  parseJustifyContent,
+  parseFlexWrap
 } from '../utils';
 import { Component } from '../Component';
 
 const Container = styled.div`
   ${(props: any) => props.styled}
   display: flex;
-  flex-wrap: wrap;
   align-content: flex-start;
   padding: 0;
   margin: 0 auto;
@@ -29,6 +30,7 @@ const Container = styled.div`
     backgroundSize: 'background-size',
     width: 'width',
     height: 'height',
+    maxWidth: 'max-width',
     alignItems: {
       attr: 'align-items',
       transform: parseAlignItems
@@ -39,7 +41,12 @@ const Container = styled.div`
     },
     stack: {
       attr: 'flex-direction',
-      transform: (value: any) => (value === 'Horizontally' ? 'row' : 'column')
+      transform: (value: any) =>
+        value && value.toLowerCase() === 'horizontally' ? 'row' : 'column'
+    },
+    wrap: {
+      attr: 'flex-wrap',
+      transform: parseFlexWrap
     }
   })}
 `;
@@ -69,6 +76,11 @@ Main.props = {
       type: PropTypes.Array,
       default: Object.keys(alignItemsValues),
       editor: EditorTypes.Combo
+    },
+    wrap: {
+      type: PropTypes.Array,
+      default: Object.keys(flexWrapValues),
+      editor: EditorTypes.Combo
     }
   },
   dimensions: {
@@ -77,15 +89,35 @@ Main.props = {
       default: '100%',
       editor: {
         type: EditorTypes.UnitValue,
-        options: [PropTypes.UnitValue.px, PropTypes.UnitValue.percentage]
+        options: [
+          PropTypes.UnitValue.px,
+          PropTypes.UnitValue.percentage,
+          PropTypes.UnitValue.auto
+        ]
       }
     },
     height: {
       type: PropTypes.UnitValue,
-      default: '100%',
+      default: 'auto',
       editor: {
         type: EditorTypes.UnitValue,
-        options: [PropTypes.UnitValue.px, PropTypes.UnitValue.percentage]
+        options: [
+          PropTypes.UnitValue.px,
+          PropTypes.UnitValue.percentage,
+          PropTypes.UnitValue.auto
+        ]
+      }
+    },
+    maxWidth: {
+      type: PropTypes.UnitValue,
+      default: '1366px',
+      editor: {
+        type: EditorTypes.UnitValue,
+        options: [
+          PropTypes.UnitValue.px,
+          PropTypes.UnitValue.percentage,
+          PropTypes.UnitValue.auto
+        ]
       }
     }
   },
