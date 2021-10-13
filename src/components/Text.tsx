@@ -56,7 +56,13 @@ Text.props = {
     },
     decoration: {
       type: PropTypes.Array,
-      default: ['none', 'underline', 'underline dotted', 'overline'],
+      default: [
+        'none',
+        'underline',
+        'underline dotted',
+        'line-through',
+        'overline'
+      ],
       editor: EditorTypes.Combo
     }
   },
