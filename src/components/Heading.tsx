@@ -16,7 +16,9 @@ const setBase = css`
     textAlign: 'text-align',
     font: 'font',
     padding: 'padding',
-    margin: 'margin'
+    margin: 'margin',
+    decoration: 'text-decoration',
+    width: 'width'
   })}
 `;
 
@@ -104,12 +106,35 @@ Heading.props = {
         type: EditorTypes.Font,
         showTitle: false
       }
+    },
+    decoration: {
+      type: PropTypes.Array,
+      default: [
+        'none',
+        'underline',
+        'underline dotted',
+        'line-through',
+        'overline'
+      ],
+      editor: EditorTypes.Combo
+    }
+  },
+  width: {
+    type: PropTypes.UnitValue,
+    default: 'auto',
+    editor: {
+      type: EditorTypes.UnitValue,
+      options: [
+        PropTypes.UnitValue.px,
+        PropTypes.UnitValue.percentage,
+        PropTypes.UnitValue.auto
+      ]
     }
   },
   alignment: {
     textAlign: {
       type: PropTypes.Array,
-      default: ['left', 'center', 'right', 'justify'],
+      default: ['center', 'left', 'right', 'justify'],
       editor: {
         type: EditorTypes.Combo,
         showTitle: false

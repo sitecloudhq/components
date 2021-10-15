@@ -68,6 +68,7 @@ export const FontDefaultOptions = {
   weight: 400,
   size: '16px'
 };
+
 export class Font {
   constructor(options = FontDefaultOptions) {
     this.family = options.family;
