@@ -5,6 +5,7 @@ export default {
   Color: 'color',
   UnitValue: 'unit_value',
   Image: 'image',
+  ImageGallery: 'image_gallery',
   BackgroundImage: 'background_image',
   Slider: 'slider',
   Rect: 'rect',

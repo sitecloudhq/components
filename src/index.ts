@@ -4,6 +4,7 @@ import Row from './components/Row';
 import Heading from './components/Heading';
 import Text from './components/Text';
 import Image from './components/Image';
+import ImageGallery from './components/ImageGallery';
 import Main from './components/Main';
 import Link from './components/Link';
 import Button from './components/Button';
@@ -22,6 +23,7 @@ export {
   Heading,
   Text,
   Image,
+  ImageGallery,
   Button,
   Link,
   styleProps,
