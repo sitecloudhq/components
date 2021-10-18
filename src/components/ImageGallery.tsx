@@ -28,13 +28,13 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-const ImageGallery: Component<{ images: string[] }> = ({
+const ImageGallery: Component<{ images: { sources: string[] } }> = ({
   images,
   ...props
 }) => (
   <Container {...props}>
-    {images.map((image) => (
-      <Image src={image} />
+    {images?.sources?.map((src) => (
+      <Image src={src} />
     ))}
   </Container>
 );
