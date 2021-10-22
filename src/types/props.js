@@ -2,6 +2,7 @@ export const String = globalThis.String;
 export const Array = globalThis.Array;
 export const Color = globalThis.String;
 export const URL = globalThis.URL;
+export const Number = globalThis.Number;
 
 export class UnitValue {
   constructor(value) {
