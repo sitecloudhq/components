@@ -47,7 +47,6 @@ const SlideShow = styled.div<{
   width: 100%;
   height: 100%;
   display: flex;
-  z-index: -2;
   animation: ${(props) =>
     `slideshow ${
       props.slides * (props.slideSpeed + props.transitionSpeed)
@@ -78,6 +77,10 @@ const Container = styled.header`
   })}
 `;
 
+const Content = styled.div`
+  z-index: 1;
+`;
+
 const DEFAULT_SLIDE_SPEED = 5;
 const DEFAULT_TRANSITION_SPEED = 2;
 
@@ -103,7 +106,7 @@ const Header: Component<{
       ))}
       {images?.sources?.length > 1 ? <Image src={images.sources[0]} /> : null}
     </SlideShow>
-    {children}
+    <Content>{children}</Content>
   </Container>
 );
 
