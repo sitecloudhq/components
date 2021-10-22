@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import { Heading as Icon } from 'styled-icons/fa-solid';
 
 import { PropTypes, EditorTypes } from '../types';
-import theme from '../theme';
 import { styleProps } from '../utils';
 import { Component } from '../Component';
 
