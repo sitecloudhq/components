@@ -2,6 +2,7 @@ import Container from './components/Container';
 import Column from './components/Column';
 import Row from './components/Row';
 import Heading from './components/Heading';
+import Header from './components/Header';
 import Text from './components/Text';
 import Image from './components/Image';
 import ImageGallery from './components/ImageGallery';
@@ -21,6 +22,7 @@ export {
   Column,
   Row,
   Heading,
+  Header,
   Text,
   Image,
   ImageGallery,
