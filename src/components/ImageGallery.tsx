@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { ImageAlt as Icon } from 'styled-icons/boxicons-regular';
 
@@ -55,16 +55,55 @@ const Container = styled.div`
   })}
 `;
 
+const FullScreenOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-duration: 0.2s;
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+`;
+
+const FullScreenImage = styled.img`
+  width: 90vw;
+  height: 90vh;
+  object-fit: cover;
+`;
+
 const ImageGallery: Component<{ images: { sources: string[] } }> = ({
   images,
   ...props
-}) => (
-  <Container {...props}>
-    {images?.sources?.map((src) => (
-      <Image src={src} />
-    ))}
-  </Container>
-);
+}) => {
+  const [openImage, setOpenImage] = useState<string | null>(null);
+  return (
+    <>
+      <Container {...props}>
+        {images?.sources?.map((src) => (
+          <Image src={src} onClick={() => setOpenImage(src)} />
+        ))}
+      </Container>
+      {openImage && (
+        <FullScreenOverlay onClick={() => setOpenImage(null)}>
+          <FullScreenImage src={openImage} />
+        </FullScreenOverlay>
+      )}
+    </>
+  );
+};
 
 ImageGallery.paddable = true;
 ImageGallery.canReceive = [];

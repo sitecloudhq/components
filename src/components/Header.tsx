@@ -101,8 +101,8 @@ const Header: Component<{
       slideSpeed={slideSpeed}
       transitionSpeed={transitionSpeed}
     >
-      {images?.sources?.map((src) => (
-        <Image src={src} />
+      {images?.sources?.map((src, idx) => (
+        <Image src={src} key={src + idx} />
       ))}
       {images?.sources?.length > 1 ? <Image src={images.sources[0]} /> : null}
     </SlideShow>
