@@ -77,7 +77,10 @@ const Container = styled.header`
   })}
 `;
 
-const Content = styled.div<{ alignment: string | string[] }>`
+const Content = styled.div<{
+  alignment?: string | string[];
+  width?: string | string[];
+}>`
   z-index: 1;
   display: flex;
   flex-direction: column;
