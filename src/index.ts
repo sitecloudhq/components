@@ -9,6 +9,11 @@ import ImageGallery from './components/ImageGallery';
 import Main from './components/Main';
 import Link from './components/Link';
 import Button from './components/Button';
+import Location from './components/Location';
+import Form from './components/Form';
+import Input from './components/Input';
+import TextArea from './components/TextArea';
+
 import { PropTypes, EditorTypes } from './types';
 import { styleProps, falltroughValues } from './utils';
 import { Component } from './Component';
@@ -28,6 +33,10 @@ export {
   ImageGallery,
   Button,
   Link,
+  Location,
+  Form,
+  Input,
+  TextArea,
   styleProps,
   falltroughValues
 };

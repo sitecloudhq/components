@@ -1,10 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ImageAlt as Icon } from 'styled-icons/boxicons-regular';
-
-import { PropTypes, EditorTypes } from '../types';
-import { styleProps } from '../utils';
 import { Component } from '../Component';
+import { EditorTypes, PropTypes } from '../types';
+import { styleProps } from '../utils';
 
 const Image = styled.img`
   object-fit: cover;
@@ -66,19 +65,32 @@ const Container = styled.header`
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
   ${styleProps({
-    width: 'width',
-    height: 'height',
+    height: 'min-height',
     padding: 'padding',
-    margin: 'margin'
+    margin: 'margin',
+    backgroundColor: 'background-color',
+    roundCorners: 'border-radius'
   })}
 `;
 
-const Content = styled.div`
+const Content = styled.div<{ alignment: string | string[] }>`
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  text-align ${(props) => (props.alignment ? props.alignment : 'left')};
+  align-items: ${(props) =>
+    props.alignment === 'left'
+      ? 'flex-start'
+      : props.alignment === 'right'
+      ? 'flex-end'
+      : 'center'};
+  ${styleProps({
+    width: 'max-width'
+  })};
 `;
 
 const DEFAULT_SLIDE_SPEED = 5;
@@ -88,25 +100,33 @@ const Header: Component<{
   images: { sources: string[] };
   slideSpeed: number;
   transitionSpeed: number;
+  alignment: string;
+  width: string | string[];
 }> = ({
   children,
   images,
   slideSpeed = DEFAULT_SLIDE_SPEED,
   transitionSpeed = DEFAULT_TRANSITION_SPEED,
+  alignment,
+  width = '50%',
   ...props
 }) => (
   <Container {...props}>
-    <SlideShow
-      slides={images?.sources?.length}
-      slideSpeed={slideSpeed}
-      transitionSpeed={transitionSpeed}
-    >
-      {images?.sources?.map((src, idx) => (
-        <Image src={src} key={src + idx} />
-      ))}
-      {images?.sources?.length > 1 ? <Image src={images.sources[0]} /> : null}
-    </SlideShow>
-    <Content>{children}</Content>
+    {images && (
+      <SlideShow
+        slides={images?.sources?.length}
+        slideSpeed={slideSpeed}
+        transitionSpeed={transitionSpeed}
+      >
+        {images?.sources?.map((src, idx) => (
+          <Image src={src} key={src + idx} />
+        ))}
+        {images?.sources?.length > 1 ? <Image src={images.sources[0]} /> : null}
+      </SlideShow>
+    )}
+    <Content width={width} alignment={alignment}>
+      {children}
+    </Content>
   </Container>
 );
 
@@ -125,7 +145,7 @@ Header.props = {
   },
   width: {
     type: PropTypes.UnitValue,
-    default: 'auto',
+    default: '50%',
     editor: {
       type: EditorTypes.UnitValue,
       options: [
@@ -166,6 +186,25 @@ Header.props = {
       right: 0
     },
     editor: EditorTypes.Rect
+  },
+  alignment: {
+    type: PropTypes.Array,
+    default: ['center', 'left', 'right'],
+    editor: EditorTypes.Combo
+  },
+  aspect: {
+    roundCorners: {
+      type: PropTypes.UnitValue,
+      default: '0px',
+      editor: EditorTypes.Slider
+    },
+    backgroundColor: {
+      type: PropTypes.Color,
+      default: 'black',
+      editor: EditorTypes.Color,
+      required: false,
+      enabled: false
+    }
   }
 };
 

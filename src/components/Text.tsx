@@ -9,16 +9,22 @@ import { Component } from '../Component';
 const Container = styled.p`
   ${(props: any) => props.styled}
   word-break: break-word;
+  border: ${({ borderColor, borderWidth }: any) =>
+    borderColor && borderWidth
+      ? `${borderWidth} solid ${borderColor}`
+      : 'none'};
 
   ${styleProps({
     color: 'color',
+    backgroundColor: 'background-color',
     opacity: 'opacity',
     textAlign: 'text-align',
     font: 'font',
     padding: 'padding',
     margin: 'margin',
     decoration: 'text-decoration',
-    width: 'width'
+    width: 'width',
+    lineHeight: 'line-height'
   })}
 `;
 
@@ -108,6 +114,39 @@ Text.props = {
       type: PropTypes.Color,
       default: 'black',
       editor: EditorTypes.Color
+    },
+    backgroundColor: {
+      type: PropTypes.Color,
+      editor: EditorTypes.Color,
+      required: false,
+      enabled: false
+    },
+    lineHeight: {
+      type: PropTypes.UnitValue,
+      default: 'auto',
+      editor: EditorTypes.Slider,
+      options: [PropTypes.UnitValue.percentage, PropTypes.UnitValue.auto]
+    },
+    border: {
+      borderColor: {
+        type: PropTypes.Color,
+        default: 'black',
+        editor: {
+          type: EditorTypes.Color,
+          title: 'Border',
+          root: true
+        },
+        required: false,
+        enabled: false
+      },
+      borderWidth: {
+        type: PropTypes.UnitValue,
+        default: '0px',
+        editor: {
+          type: EditorTypes.Slider,
+          title: 'Border Width'
+        }
+      }
     }
   }
 };
