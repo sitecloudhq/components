@@ -5,8 +5,6 @@ import { Component } from '../Component';
 import { EditorTypes, PropTypes } from '../types';
 import { styleProps } from '../utils';
 
-const GMAPS_API_KEY = 'AIzaSyANFw-fg_fw8JuQ17KcznFSDZLprfnhP7w';
-
 const Container = styled.div`
   ${(props: any) => props.styled}
   position: relative;
@@ -45,7 +43,8 @@ const MapContainer = styled.div`
 const Location: Component<{
   location: string;
   width: string;
-}> = ({ children, location, width, ...props }) => (
+  google_api_key: string;
+}> = ({ children, location, width, google_api_key, ...props }) => (
   <Container {...props}>
     <Content width={width}>
       {children}
@@ -56,7 +55,7 @@ const Location: Component<{
           style={{ border: 0 }}
           loading="lazy"
           frameBorder="0"
-          src={`https://www.google.com/maps/embed/v1/place?key=${GMAPS_API_KEY}&q=${location}`}
+          src={`https://www.google.com/maps/embed/v1/place?key=${google_api_key}&q=${location}`}
         />
       </MapContainer>
     </Content>
