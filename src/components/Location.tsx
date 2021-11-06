@@ -121,8 +121,7 @@ Location.props = {
         default: 'black',
         editor: {
           type: EditorTypes.Color,
-          title: 'Border',
-          root: true
+          title: 'Border Color'
         },
         required: false,
         enabled: false
@@ -144,7 +143,10 @@ Location.props = {
     backgroundColor: {
       type: PropTypes.Color,
       default: 'black',
-      editor: EditorTypes.Color,
+      editor: {
+        type: EditorTypes.Color,
+        title: 'Background Color'
+      },
       required: false,
       enabled: false
     }

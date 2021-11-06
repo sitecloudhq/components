@@ -113,11 +113,17 @@ Text.props = {
     color: {
       type: PropTypes.Color,
       default: 'black',
-      editor: EditorTypes.Color
+      editor: {
+        type: EditorTypes.Color,
+        title: 'Font Color'
+      }
     },
     backgroundColor: {
       type: PropTypes.Color,
-      editor: EditorTypes.Color,
+      editor: {
+        type: EditorTypes.Color,
+        title: 'Background Color'
+      },
       required: false,
       enabled: false
     },
@@ -133,7 +139,7 @@ Text.props = {
         default: 'black',
         editor: {
           type: EditorTypes.Color,
-          title: 'Border',
+          title: 'Border Color',
           root: true
         },
         required: false,
