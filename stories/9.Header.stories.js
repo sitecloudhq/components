@@ -231,6 +231,8 @@ export const header7 = () => (
 
 export const header_with_slideshow = () => (
   <Header
+    width="100%"
+    contentWidth="50%"
     height="40vw"
     padding={{ top: 20, left: 0, bottom: 20, right: 0 }}
     slideSpeed={5}

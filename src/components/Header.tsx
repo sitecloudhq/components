@@ -60,7 +60,7 @@ const SlideShow = styled.div<{
       : null};
 `;
 
-const Container = styled.header`
+const Container = styled.header<{ width?: string | string[] }>`
   ${(props: any) => props.styled}
   position: relative;
   overflow: hidden;
@@ -69,6 +69,7 @@ const Container = styled.header`
   flex-direction: column;
   align-items: center;
   ${styleProps({
+    width: 'width',
     height: 'min-height',
     padding: 'padding',
     margin: 'margin',
@@ -104,17 +105,19 @@ const Header: Component<{
   slideSpeed: number;
   transitionSpeed: number;
   alignment: string;
-  width: string | string[];
+  contentWidth?: string | string[];
+  width?: string | string[];
 }> = ({
   children,
   images,
   slideSpeed = DEFAULT_SLIDE_SPEED,
   transitionSpeed = DEFAULT_TRANSITION_SPEED,
   alignment,
-  width = '50%',
+  width = '100%',
+  contentWidth = '50%',
   ...props
 }) => (
-  <Container {...props}>
+  <Container width={width} {...props}>
     {images && (
       <SlideShow
         slides={images?.sources?.length}
@@ -127,7 +130,7 @@ const Header: Component<{
         {images?.sources?.length > 1 ? <Image src={images.sources[0]} /> : null}
       </SlideShow>
     )}
-    <Content width={width} alignment={alignment}>
+    <Content width={contentWidth} alignment={alignment}>
       {children}
     </Content>
   </Container>
