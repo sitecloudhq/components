@@ -114,11 +114,11 @@ ImageGallery.props = {
     editor: EditorTypes.ImageGallery
   },
   gap: {
-    type: PropTypes.UnitValue,
+    type: PropTypes.Length,
     default: '10px',
     editor: {
-      type: EditorTypes.UnitValue,
-      options: [PropTypes.UnitValue.px]
+      type: EditorTypes.Length,
+      options: [PropTypes.Length.px]
     }
   },
   gallery: {
@@ -128,26 +128,26 @@ ImageGallery.props = {
   },
 
   width: {
-    type: PropTypes.UnitValue,
+    type: PropTypes.Length,
     default: 'auto',
     editor: {
-      type: EditorTypes.UnitValue,
+      type: EditorTypes.Length,
       options: [
-        PropTypes.UnitValue.px,
-        PropTypes.UnitValue.percentage,
-        PropTypes.UnitValue.auto
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.auto
       ]
     }
   },
   height: {
-    type: PropTypes.UnitValue,
+    type: PropTypes.Length,
     default: 'auto',
     editor: {
-      type: EditorTypes.UnitValue,
+      type: EditorTypes.Length,
       options: [
-        PropTypes.UnitValue.px,
-        PropTypes.UnitValue.percentage,
-        PropTypes.UnitValue.auto
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.auto
       ]
     }
   },

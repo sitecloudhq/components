@@ -73,19 +73,19 @@ Container.props = {
   },
   dimensions: {
     width: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '100%',
       editor: {
-        type: EditorTypes.UnitValue,
-        options: [PropTypes.UnitValue.px, PropTypes.UnitValue.percentage]
+        type: EditorTypes.Length,
+        options: [PropTypes.Length.px, PropTypes.Length.percentage]
       }
     },
     height: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '50px',
       editor: {
-        type: EditorTypes.UnitValue,
-        options: [PropTypes.UnitValue.px, PropTypes.UnitValue.percentage]
+        type: EditorTypes.Length,
+        options: [PropTypes.Length.px, PropTypes.Length.percentage]
       },
       required: false,
       enabled: false

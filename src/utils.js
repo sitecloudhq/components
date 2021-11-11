@@ -4,7 +4,7 @@ import { PropTypes } from './types';
 import { breakpoints, breakpointKeys, breakpointStyles } from './breakpoints';
 
 const rectToProp = PropTypes.Rect.toProp;
-const toProp = PropTypes.UnitValue.toProp;
+const toProp = PropTypes.Length.toProp;
 
 const parseProp = (prop) => {
   if (!prop) return undefined;

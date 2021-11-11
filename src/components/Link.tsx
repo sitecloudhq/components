@@ -86,7 +86,7 @@ Link.props = {
   },
   aspect: {
     opacity: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '100%',
       editor: EditorTypes.Slider
     },

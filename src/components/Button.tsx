@@ -73,12 +73,12 @@ Button.props = {
 
   aspect: {
     opacity: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '100%',
       editor: EditorTypes.Slider
     },
     roundCorners: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '0px',
       editor: EditorTypes.Slider
     },

@@ -66,26 +66,26 @@ Location.paddable = true;
 Location.canReceive = [];
 Location.props = {
   width: {
-    type: PropTypes.UnitValue,
+    type: PropTypes.Length,
     default: '50%',
     editor: {
-      type: EditorTypes.UnitValue,
+      type: EditorTypes.Length,
       options: [
-        PropTypes.UnitValue.px,
-        PropTypes.UnitValue.percentage,
-        PropTypes.UnitValue.auto
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.auto
       ]
     }
   },
   height: {
-    type: PropTypes.UnitValue,
+    type: PropTypes.Length,
     default: 'auto',
     editor: {
-      type: EditorTypes.UnitValue,
+      type: EditorTypes.Length,
       options: [
-        PropTypes.UnitValue.px,
-        PropTypes.UnitValue.percentage,
-        PropTypes.UnitValue.auto
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.auto
       ]
     }
   },
@@ -127,7 +127,7 @@ Location.props = {
         enabled: false
       },
       borderWidth: {
-        type: PropTypes.UnitValue,
+        type: PropTypes.Length,
         default: '0px',
         editor: {
           type: EditorTypes.Slider,
@@ -136,7 +136,7 @@ Location.props = {
       }
     },
     roundCorners: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '0px',
       editor: EditorTypes.Slider
     },

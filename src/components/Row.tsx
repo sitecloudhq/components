@@ -56,26 +56,26 @@ Row.paddable = true;
 Row.props = {
   dimensions: {
     width: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '100%',
       editor: {
-        type: EditorTypes.UnitValue,
+        type: EditorTypes.Length,
         options: [
-          PropTypes.UnitValue.px,
-          PropTypes.UnitValue.percentage,
-          PropTypes.UnitValue.auto
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.auto
         ]
       }
     },
     height: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '32px',
       editor: {
-        type: EditorTypes.UnitValue,
+        type: EditorTypes.Length,
         options: [
-          PropTypes.UnitValue.px,
-          PropTypes.UnitValue.percentage,
-          PropTypes.UnitValue.auto
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.auto
         ]
       }
     }

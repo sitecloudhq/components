@@ -3,7 +3,7 @@ export default {
   RichInput: 'rich_input',
   Combo: 'combo',
   Color: 'color',
-  UnitValue: 'unit_value',
+  Length: 'length',
   Image: 'image',
   ImageGallery: 'image_gallery',
   BackgroundImage: 'background_image',

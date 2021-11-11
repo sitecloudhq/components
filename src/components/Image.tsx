@@ -54,26 +54,26 @@ Image.props = {
     editor: EditorTypes.Combo
   },
   width: {
-    type: PropTypes.UnitValue,
+    type: PropTypes.Length,
     default: 'auto',
     editor: {
-      type: EditorTypes.UnitValue,
+      type: EditorTypes.Length,
       options: [
-        PropTypes.UnitValue.px,
-        PropTypes.UnitValue.percentage,
-        PropTypes.UnitValue.auto
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.auto
       ]
     }
   },
   height: {
-    type: PropTypes.UnitValue,
+    type: PropTypes.Length,
     default: 'auto',
     editor: {
-      type: EditorTypes.UnitValue,
+      type: EditorTypes.Length,
       options: [
-        PropTypes.UnitValue.px,
-        PropTypes.UnitValue.percentage,
-        PropTypes.UnitValue.auto
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.auto
       ]
     }
   },
@@ -99,12 +99,12 @@ Image.props = {
   },
   aspect: {
     opacity: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '100%',
       editor: EditorTypes.Slider
     },
     roundCorners: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '0px',
       editor: EditorTypes.Slider
     },
@@ -121,7 +121,7 @@ Image.props = {
         enabled: false
       },
       borderWidth: {
-        type: PropTypes.UnitValue,
+        type: PropTypes.Length,
         default: '0px',
         editor: {
           type: EditorTypes.Slider,
@@ -142,7 +142,7 @@ Image.props = {
         enabled: false
       },
       shadowHorizontal: {
-        type: PropTypes.UnitValue,
+        type: PropTypes.Length,
         default: '0px',
         editor: {
           type: EditorTypes.Slider,
@@ -150,7 +150,7 @@ Image.props = {
         }
       },
       shadowVertical: {
-        type: PropTypes.UnitValue,
+        type: PropTypes.Length,
         default: '0px',
         editor: {
           type: EditorTypes.Slider,
@@ -158,7 +158,7 @@ Image.props = {
         }
       },
       blur: {
-        type: PropTypes.UnitValue,
+        type: PropTypes.Length,
         default: '0px',
         editor: {
           type: EditorTypes.Slider,
@@ -166,7 +166,7 @@ Image.props = {
         }
       },
       spread: {
-        type: PropTypes.UnitValue,
+        type: PropTypes.Length,
         default: '0px',
         editor: {
           type: EditorTypes.Slider,

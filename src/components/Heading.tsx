@@ -119,14 +119,14 @@ Heading.props = {
     }
   },
   width: {
-    type: PropTypes.UnitValue,
+    type: PropTypes.Length,
     default: 'auto',
     editor: {
-      type: EditorTypes.UnitValue,
+      type: EditorTypes.Length,
       options: [
-        PropTypes.UnitValue.px,
-        PropTypes.UnitValue.percentage,
-        PropTypes.UnitValue.auto
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.auto
       ]
     }
   },
@@ -162,7 +162,7 @@ Heading.props = {
   },
   aspect: {
     opacity: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '100%',
       editor: EditorTypes.Slider
     },

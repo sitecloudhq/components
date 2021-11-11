@@ -73,14 +73,14 @@ Text.props = {
     }
   },
   width: {
-    type: PropTypes.UnitValue,
+    type: PropTypes.Length,
     default: 'auto',
     editor: {
-      type: EditorTypes.UnitValue,
+      type: EditorTypes.Length,
       options: [
-        PropTypes.UnitValue.px,
-        PropTypes.UnitValue.percentage,
-        PropTypes.UnitValue.auto
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.auto
       ]
     }
   },
@@ -106,7 +106,7 @@ Text.props = {
   },
   aspect: {
     opacity: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '100%',
       editor: EditorTypes.Slider
     },
@@ -128,10 +128,10 @@ Text.props = {
       enabled: false
     },
     lineHeight: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: 'auto',
       editor: EditorTypes.Slider,
-      options: [PropTypes.UnitValue.percentage, PropTypes.UnitValue.auto]
+      options: [PropTypes.Length.percentage, PropTypes.Length.auto]
     },
     border: {
       borderColor: {
@@ -146,7 +146,7 @@ Text.props = {
         enabled: false
       },
       borderWidth: {
-        type: PropTypes.UnitValue,
+        type: PropTypes.Length,
         default: '0px',
         editor: {
           type: EditorTypes.Slider,

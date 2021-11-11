@@ -150,26 +150,26 @@ Header.props = {
     editor: EditorTypes.Slider
   },
   width: {
-    type: PropTypes.UnitValue,
+    type: PropTypes.Length,
     default: '50%',
     editor: {
-      type: EditorTypes.UnitValue,
+      type: EditorTypes.Length,
       options: [
-        PropTypes.UnitValue.px,
-        PropTypes.UnitValue.percentage,
-        PropTypes.UnitValue.auto
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.auto
       ]
     }
   },
   height: {
-    type: PropTypes.UnitValue,
+    type: PropTypes.Length,
     default: 'auto',
     editor: {
-      type: EditorTypes.UnitValue,
+      type: EditorTypes.Length,
       options: [
-        PropTypes.UnitValue.px,
-        PropTypes.UnitValue.percentage,
-        PropTypes.UnitValue.auto
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.auto
       ]
     }
   },
@@ -200,7 +200,7 @@ Header.props = {
   },
   aspect: {
     roundCorners: {
-      type: PropTypes.UnitValue,
+      type: PropTypes.Length,
       default: '0px',
       editor: EditorTypes.Slider
     },

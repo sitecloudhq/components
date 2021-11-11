@@ -4,13 +4,13 @@ export const Color = globalThis.String;
 export const URL = globalThis.URL;
 export const Number = globalThis.Number;
 
-export class UnitValue {
+export class Length {
   constructor(value) {
     if (value === 'auto') {
       this.value = 0;
       this.unit = 'auto';
     } else {
-      const parsed = value && value.match(/(^.*)(\%|em|rem|px|deg)/i);
+      const parsed = value && value.match(/(^.*)(\%|em|rem|px)/i);
       if (parsed) {
         this.value = parsed[1];
         this.unit = parsed[2];
@@ -29,10 +29,6 @@ export class UnitValue {
 
   static get percentage() {
     return '%';
-  }
-
-  static get deg() {
-    return 'deg';
   }
 
   static get auto() {
