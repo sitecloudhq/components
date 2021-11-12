@@ -13,8 +13,8 @@ export const header1 = () => (
     padding={{ top: 20, left: 0, bottom: 20, right: 0 }}
     alignment="left"
     backgroundColor="#DDDDDD"
-    roundCorners="10px"
-    width={['40%', '50%', '60%', '100%']}
+    width="100%"
+    contentWidth={['50%', '50%', '90%', '90%']}
   >
     <Heading
       font={[
@@ -50,7 +50,7 @@ export const header1 = () => (
     <Text
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '30px' }}
       color="#1A1A1A"
-      value="Proactively envisioned multimedia based expertise and cross-media growth strategies."
+      value="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
     />
     <Button
       padding={{ top: 10, bottom: 10, right: 20, left: 20 }}

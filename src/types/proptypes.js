@@ -10,7 +10,7 @@ export class Length {
       this.value = 0;
       this.unit = 'auto';
     } else {
-      const parsed = value && value.match(/(^.*)(\%|em|rem|px)/i);
+      const parsed = value && value.match(/(^.*)(\%|em|rem|vh|vw|px)/i);
       if (parsed) {
         this.value = parsed[1];
         this.unit = parsed[2];
@@ -29,6 +29,14 @@ export class Length {
 
   static get percentage() {
     return '%';
+  }
+
+  static get vh() {
+    return 'vh';
+  }
+
+  static get vw() {
+    return 'vw';
   }
 
   static get auto() {

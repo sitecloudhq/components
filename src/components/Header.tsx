@@ -157,6 +157,22 @@ Header.props = {
       options: [
         PropTypes.Length.px,
         PropTypes.Length.percentage,
+        PropTypes.Length.vw,
+        PropTypes.Length.vh,
+        PropTypes.Length.auto
+      ]
+    }
+  },
+  contentWidth: {
+    type: PropTypes.Length,
+    default: '50%',
+    editor: {
+      type: EditorTypes.Length,
+      options: [
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.vw,
+        PropTypes.Length.vh,
         PropTypes.Length.auto
       ]
     }
@@ -169,6 +185,8 @@ Header.props = {
       options: [
         PropTypes.Length.px,
         PropTypes.Length.percentage,
+        PropTypes.Length.vw,
+        PropTypes.Length.vh,
         PropTypes.Length.auto
       ]
     }
