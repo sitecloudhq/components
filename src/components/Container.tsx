@@ -77,7 +77,13 @@ Container.props = {
       default: '100%',
       editor: {
         type: EditorTypes.Length,
-        options: [PropTypes.Length.px, PropTypes.Length.percentage]
+        options: [
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh,
+          PropTypes.Length.auto
+        ]
       }
     },
     height: {
@@ -85,7 +91,13 @@ Container.props = {
       default: '50px',
       editor: {
         type: EditorTypes.Length,
-        options: [PropTypes.Length.px, PropTypes.Length.percentage]
+        options: [
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh,
+          PropTypes.Length.auto
+        ]
       },
       required: false,
       enabled: false

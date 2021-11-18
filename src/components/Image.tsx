@@ -61,6 +61,8 @@ Image.props = {
       options: [
         PropTypes.Length.px,
         PropTypes.Length.percentage,
+        PropTypes.Length.vw,
+        PropTypes.Length.vh,
         PropTypes.Length.auto
       ]
     }
@@ -73,6 +75,8 @@ Image.props = {
       options: [
         PropTypes.Length.px,
         PropTypes.Length.percentage,
+        PropTypes.Length.vw,
+        PropTypes.Length.vh,
         PropTypes.Length.auto
       ]
     }
