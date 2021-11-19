@@ -13,6 +13,10 @@ const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+  border: ${({ borderColor, borderWidth }: any) =>
+    borderColor && borderWidth
+      ? `${borderWidth} solid ${borderColor}`
+      : 'none'};
 
   ${styleProps({
     opacity: 'opacity',
@@ -76,6 +80,27 @@ Button.props = {
       type: PropTypes.Length,
       default: '100%',
       editor: EditorTypes.Slider
+    },
+    border: {
+      borderColor: {
+        type: PropTypes.Color,
+        default: 'black',
+        editor: {
+          type: EditorTypes.Color,
+          title: 'Border Color',
+          root: true
+        },
+        required: false,
+        enabled: false
+      },
+      borderWidth: {
+        type: PropTypes.Length,
+        default: '0px',
+        editor: {
+          type: EditorTypes.Slider,
+          title: 'Border Width'
+        }
+      }
     },
     roundCorners: {
       type: PropTypes.Length,

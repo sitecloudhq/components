@@ -9,4 +9,10 @@ export default {
   decorators: [withKnobs]
 };
 
-export const button = () => <Button value={text('value', 'Button')} />;
+export const button = () => (
+  <Button
+    value={text('value', 'Button')}
+    borderColor="black"
+    borderWidth="1px"
+  />
+);
