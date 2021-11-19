@@ -92,6 +92,8 @@ Main.props = {
         options: [
           PropTypes.Length.px,
           PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh,
           PropTypes.Length.auto
         ]
       }
@@ -104,6 +106,8 @@ Main.props = {
         options: [
           PropTypes.Length.px,
           PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh,
           PropTypes.Length.auto
         ]
       }
@@ -116,6 +120,8 @@ Main.props = {
         options: [
           PropTypes.Length.px,
           PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh,
           PropTypes.Length.auto
         ]
       }
