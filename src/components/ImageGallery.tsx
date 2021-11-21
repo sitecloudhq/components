@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { ImageAlt as Icon } from 'styled-icons/boxicons-regular';
 
@@ -55,14 +55,14 @@ const Container = styled.div`
   })}
 `;
 
-const FullScreenOverlay = styled.div`
+const FullScreenOverlay = styled.div<{ visible: boolean }>`
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.65);
-  display: flex;
+  display: ${(props: any) => (props.visible ? 'flex' : 'none')};
   justify-content: center;
   align-items: center;
   opacity: 1;
@@ -88,19 +88,24 @@ const ImageGallery: Component<{ images: { sources: string[] } }> = ({
   images,
   ...props
 }) => {
-  const [openImage, setOpenImage] = useState<string | null>(null);
+  const [openImage, setOpenImage] = useState<string | undefined>(undefined);
   return (
     <>
       <Container {...props}>
-        {images?.sources?.map((src) => (
-          <Image src={src} onClick={() => setOpenImage(src)} />
+        {images?.sources?.map((src, idx) => (
+          <Image
+            key={`img-${idx}`}
+            src={src}
+            onClick={() => setOpenImage(src)}
+          />
         ))}
       </Container>
-      {openImage && (
-        <FullScreenOverlay onClick={() => setOpenImage(null)}>
-          <FullScreenImage src={openImage} />
-        </FullScreenOverlay>
-      )}
+      <FullScreenOverlay
+        onClick={() => setOpenImage(undefined)}
+        visible={!!openImage}
+      >
+        <FullScreenImage src={openImage} />
+      </FullScreenOverlay>
     </>
   );
 };
