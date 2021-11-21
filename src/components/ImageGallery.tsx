@@ -5,6 +5,7 @@ import { ImageAlt as Icon } from 'styled-icons/boxicons-regular';
 import { PropTypes, EditorTypes } from '../types';
 import { styleProps } from '../utils';
 import { Component } from '../Component';
+import FadeIn from './FadeIn';
 
 const Image = styled.img`
   width: 100%;
@@ -91,7 +92,7 @@ const ImageGallery: Component<{ images: { sources: string[] } }> = ({
 }) => {
   const [openImage, setOpenImage] = useState<string | undefined>(undefined);
   return (
-    <>
+    <FadeIn>
       <Container {...props}>
         {images?.sources?.map((src, idx) => (
           <Image
@@ -107,7 +108,7 @@ const ImageGallery: Component<{ images: { sources: string[] } }> = ({
       >
         <FullScreenImage src={openImage} />
       </FullScreenOverlay>
-    </>
+    </FadeIn>
   );
 };
 
@@ -130,9 +131,11 @@ ImageGallery.props = {
   gallery: {
     type: PropTypes.Array,
     default: ['grid', 'irregular'],
-    editor: EditorTypes.Combo
+    editor: {
+      type: EditorTypes.Combo,
+      title: 'Gallery Type'
+    }
   },
-
   width: {
     type: PropTypes.Length,
     default: 'auto',
