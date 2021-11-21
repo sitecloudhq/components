@@ -12,6 +12,8 @@ export const image_gallery = () => (
     padding={{ top: 0, left: 0, bottom: 0, right: 0 }}
     gap="15px"
     gallery="irregular"
+    width="50%"
+    height="5vw"
     images={{
       sources: [
         'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554__340.jpg',

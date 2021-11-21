@@ -13,6 +13,7 @@ import Location from './components/Location';
 import Form from './components/Form';
 import Input from './components/Input';
 import TextArea from './components/TextArea';
+import FadeIn from './components/FadeIn';
 
 import { PropTypes, EditorTypes } from './types';
 import { styleProps, falltroughValues } from './utils';
@@ -37,6 +38,7 @@ export {
   Form,
   Input,
   TextArea,
+  FadeIn,
   styleProps,
   falltroughValues
 };

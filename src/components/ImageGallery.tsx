@@ -31,12 +31,14 @@ const gridGallery = css`
 const irregularGallery = css`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 10vw;
+  grid-auto-rows: ${(props: any) =>
+    props.height ? `minmax(auto, ${props.height})` : '3vw'};
+
   ${Image}:nth-child(odd) {
-    grid-row: span 4;
+    grid-row: span 3;
   }
   ${Image}:nth-child(even) {
-    grid-row: span 3;
+    grid-row: span 2;
   }
   ${styleProps({
     gap: 'grid-gap'
@@ -49,7 +51,6 @@ const Container = styled.div`
     props.gallery == 'irregular' ? irregularGallery : gridGallery};
   ${styleProps({
     width: 'width',
-    height: 'height',
     padding: 'padding',
     margin: 'margin'
   })}
@@ -140,6 +141,8 @@ ImageGallery.props = {
       options: [
         PropTypes.Length.px,
         PropTypes.Length.percentage,
+        PropTypes.Length.vw,
+        PropTypes.Length.vh,
         PropTypes.Length.auto
       ]
     }
@@ -149,9 +152,12 @@ ImageGallery.props = {
     default: 'auto',
     editor: {
       type: EditorTypes.Length,
+      title: 'Row Height',
       options: [
         PropTypes.Length.px,
         PropTypes.Length.percentage,
+        PropTypes.Length.vw,
+        PropTypes.Length.vh,
         PropTypes.Length.auto
       ]
     }
