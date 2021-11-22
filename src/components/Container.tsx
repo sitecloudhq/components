@@ -27,6 +27,10 @@ const FlexContainer = styled.section`
     backgroundSize: 'background-size',
     width: 'width',
     height: 'height',
+    maxWidth: 'max-width',
+    maxHeight: 'max-height',
+    minWidth: 'min-width',
+    minHeight: 'min-height',
     alignItems: {
       attr: 'align-items',
       transform: parseAlignItems
@@ -96,6 +100,66 @@ Container.props = {
           PropTypes.Length.vw,
           PropTypes.Length.vh,
           PropTypes.Length.auto
+        ]
+      },
+      required: false,
+      enabled: false
+    },
+    maxWidth: {
+      type: PropTypes.Length,
+      default: '100%',
+      editor: {
+        type: EditorTypes.Length,
+        options: [
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh
+        ]
+      },
+      required: false,
+      enabled: false
+    },
+    maxHeight: {
+      type: PropTypes.Length,
+      default: '100%',
+      editor: {
+        type: EditorTypes.Length,
+        options: [
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh
+        ]
+      },
+      required: false,
+      enabled: false
+    },
+    minWidth: {
+      type: PropTypes.Length,
+      default: '100%',
+      editor: {
+        type: EditorTypes.Length,
+        options: [
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh
+        ]
+      },
+      required: false,
+      enabled: false
+    },
+    minHeight: {
+      type: PropTypes.Length,
+      default: '100%',
+      editor: {
+        type: EditorTypes.Length,
+        options: [
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh
         ]
       },
       required: false,

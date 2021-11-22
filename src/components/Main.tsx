@@ -31,6 +31,9 @@ const Container = styled.div`
     width: 'width',
     height: 'height',
     maxWidth: 'max-width',
+    maxHeight: 'max-height',
+    minWidth: 'min-width',
+    minHeight: 'min-height',
     alignItems: {
       attr: 'align-items',
       transform: parseAlignItems
@@ -121,10 +124,56 @@ Main.props = {
           PropTypes.Length.px,
           PropTypes.Length.percentage,
           PropTypes.Length.vw,
-          PropTypes.Length.vh,
-          PropTypes.Length.auto
+          PropTypes.Length.vh
         ]
-      }
+      },
+      required: false,
+      enabled: true
+    },
+    maxHeight: {
+      type: PropTypes.Length,
+      default: '100%',
+      editor: {
+        type: EditorTypes.Length,
+        options: [
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh
+        ]
+      },
+      required: false,
+      enabled: false
+    },
+    minWidth: {
+      type: PropTypes.Length,
+      default: '100%',
+      editor: {
+        type: EditorTypes.Length,
+        options: [
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh
+        ]
+      },
+      required: false,
+      enabled: false
+    },
+    minHeight: {
+      type: PropTypes.Length,
+      default: '100%',
+      editor: {
+        type: EditorTypes.Length,
+        options: [
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.vw,
+          PropTypes.Length.vh
+        ]
+      },
+      required: false,
+      enabled: false
     }
   },
   padding: {
