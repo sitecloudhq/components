@@ -67,20 +67,20 @@ Link.props = {
   padding: {
     type: PropTypes.Rect,
     default: {
-      top: 10,
-      bottom: 10,
-      left: 10,
-      right: 10
+      top: '10px',
+      bottom: '10px',
+      left: '10px',
+      right: '10px'
     },
     editor: EditorTypes.Rect
   },
   margin: {
     type: PropTypes.Rect,
     default: {
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0
+      top: '0px',
+      bottom: '0px',
+      left: '0px',
+      right: '0px'
     },
     editor: EditorTypes.Rect
   },

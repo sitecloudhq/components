@@ -143,20 +143,20 @@ Heading.props = {
   padding: {
     type: PropTypes.Rect,
     default: {
-      top: 5,
-      bottom: 5,
-      left: 5,
-      right: 5
+      top: '5px',
+      bottom: '5px',
+      left: '5px',
+      right: '5px'
     },
     editor: EditorTypes.Rect
   },
   margin: {
     type: PropTypes.Rect,
     default: {
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0
+      top: '0px',
+      bottom: '0px',
+      left: '0px',
+      right: '0px'
     },
     editor: EditorTypes.Rect
   },

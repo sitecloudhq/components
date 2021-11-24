@@ -4,13 +4,17 @@ export const Color = globalThis.String;
 export const URL = globalThis.URL;
 export const Number = globalThis.Number;
 
+function parseLength(value) {
+  return value ? value.match(/(^.*)(\%|vh|vw|px)/i) : null;
+}
+
 export class Length {
   constructor(value) {
     if (value === 'auto') {
       this.value = 0;
       this.unit = 'auto';
     } else {
-      const parsed = value && value.match(/(^.*)(\%|em|rem|vh|vw|px)/i);
+      const parsed = parseLength(value);
       if (parsed) {
         this.value = parsed[1];
         this.unit = parsed[2];
@@ -42,28 +46,77 @@ export class Length {
   static get auto() {
     return 'auto';
   }
+
+  static get units() {
+    return ['px', '%', 'vw', 'vh', 'auto'];
+  }
 }
 
-export const RectDefaultOptions = { top: 0, left: 0, bottom: 0, right: 0 };
+export const RectDefaultOptions = {
+  top: '0px',
+  left: '0px',
+  bottom: '0px',
+  right: '0px'
+};
+
 export class Rect {
+  _setParsedValue(key, value) {
+    if (typeof value === 'number') {
+      // Keep it for backward compatibility
+      this[key] = { value, unit: 'px' };
+    } else {
+      const parsedValue = parseLength(value);
+      if (parsedValue) {
+        this[key] = {
+          value: parseInt(parsedValue[1], 10),
+          unit: parsedValue[2]
+        };
+      }
+    }
+  }
+
   constructor(options = RectDefaultOptions) {
-    this.top = options.top;
-    this.left = options.left;
-    this.bottom = options.bottom;
-    this.right = options.right;
-    this.unit = 'px';
+    this._setParsedValue('top', options.top);
+    this._setParsedValue('left', options.left);
+    this._setParsedValue('bottom', options.bottom);
+    this._setParsedValue('right', options.right);
+  }
+
+  toJSON() {
+    return {
+      top: `${this.top.value}${this.top.unit}`,
+      left: `${this.left.value}${this.left.unit}`,
+      bottom: `${this.bottom.value}${this.bottom.unit}`,
+      right: `${this.right.value}${this.right.unit}`
+    };
   }
 
   toString() {
-    return JSON.stringify({ top, left, bottom, right });
+    return JSON.stringify(toJSON());
   }
 
   static toProp(value = RectDefaultOptions) {
-    return `${value.top}px ${value.right}px ${value.bottom}px ${value.left}px`;
+    return `${value.top} ${value.right} ${value.bottom} ${value.left}`;
   }
 
   static get px() {
     return 'px';
+  }
+
+  static get percentage() {
+    return '%';
+  }
+
+  static get vh() {
+    return 'vh';
+  }
+
+  static get vw() {
+    return 'vw';
+  }
+
+  static get units() {
+    return ['px', '%', 'vw', 'vh'];
   }
 }
 
