@@ -8,8 +8,10 @@ import {
   styleProps,
   alignItemsValues,
   justifyContentValues,
+  flexDirectionValuesHorizontalFirst,
   parseAlignItems,
-  parseJustifyContent
+  parseJustifyContent,
+  parseFlexDirection
 } from '../utils';
 import { Component } from '../Component';
 
@@ -35,6 +37,10 @@ const Container = styled(DefaultRow)<Props>`
     vertical: {
       attr: 'align-items',
       transform: parseAlignItems
+    },
+    stack: {
+      attr: 'flex-direction',
+      transform: parseFlexDirection
     }
   })}
 `;
@@ -77,6 +83,16 @@ Row.props = {
           PropTypes.Length.percentage,
           PropTypes.Length.auto
         ]
+      }
+    }
+  },
+  stack: {
+    stack: {
+      type: PropTypes.Array,
+      default: Object.keys(flexDirectionValuesHorizontalFirst),
+      editor: {
+        type: EditorTypes.Combo,
+        showTitle: false
       }
     }
   },

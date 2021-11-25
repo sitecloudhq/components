@@ -7,8 +7,10 @@ import {
   styleProps,
   alignItemsValues,
   justifyContentValues,
+  flexDirectionValues,
   parseAlignItems,
-  parseJustifyContent
+  parseJustifyContent,
+  parseFlexDirection
 } from '../utils';
 import { Component } from '../Component';
 
@@ -41,7 +43,7 @@ const FlexContainer = styled.section`
     },
     stack: {
       attr: 'flex-direction',
-      transform: (value: any) => (value === 'Horizontally' ? 'row' : 'column')
+      transform: parseFlexDirection
     }
   })}
 `;
@@ -55,7 +57,7 @@ Container.props = {
   stack: {
     stack: {
       type: PropTypes.Array,
-      default: ['Vertically', 'Horizontally'],
+      default: Object.keys(flexDirectionValues),
       editor: {
         type: EditorTypes.Combo,
         showTitle: false

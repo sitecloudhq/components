@@ -7,9 +7,11 @@ import {
   alignItemsValues,
   justifyContentValues,
   flexWrapValues,
+  flexDirectionValues,
   parseAlignItems,
   parseJustifyContent,
-  parseFlexWrap
+  parseFlexWrap,
+  parseFlexDirection
 } from '../utils';
 import { Component } from '../Component';
 
@@ -44,8 +46,7 @@ const Container = styled.div`
     },
     stack: {
       attr: 'flex-direction',
-      transform: (value: any) =>
-        value && value.toLowerCase() === 'horizontally' ? 'row' : 'column'
+      transform: parseFlexDirection
     },
     wrap: {
       attr: 'flex-wrap',
@@ -62,7 +63,7 @@ Main.props = {
   stack: {
     stack: {
       type: PropTypes.Array,
-      default: ['Vertically', 'Horizontally'],
+      default: Object.keys(flexDirectionValues),
       editor: {
         type: EditorTypes.Combo,
         showTitle: false

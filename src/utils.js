@@ -113,6 +113,20 @@ export const flexWrapValues = {
   'wrap reverse': 'wrap-reverse'
 };
 
+export const flexDirectionValues = {
+  vertically: 'column',
+  'vertically reverse': 'column-reverse',
+  horizontally: 'row',
+  'horizontally reverse': 'row-reverse'
+};
+
+export const flexDirectionValuesHorizontalFirst = {
+  horizontally: 'row',
+  'horizontally reverse': 'row-reverse',
+  vertically: 'column',
+  'vertically reverse': 'column-reverse'
+};
+
 export const parseAlignItems = (value) =>
   value && alignItemsValues[value.toLowerCase()];
 
@@ -121,6 +135,9 @@ export const parseJustifyContent = (value) =>
 
 export const parseFlexWrap = (value) =>
   value && flexWrapValues[value.toLowerCase()];
+
+export const parseFlexDirection = (value) =>
+  value && flexDirectionValues[value.toLowerCase()];
 
 export const falltroughValues = (value, defaultSize = 4) => {
   if (!Array.isArray(value)) return value;
