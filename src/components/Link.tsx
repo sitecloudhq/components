@@ -16,6 +16,11 @@ const Container = styled.a.attrs((props) => ({
     color: ${(props) => props.color};
   }
 
+  border: ${({ borderColor, borderWidth }: any) =>
+    borderColor && borderWidth
+      ? `${borderWidth} solid ${borderColor}`
+      : 'none'};
+
   ${styleProps({
     color: 'color',
     backgroundColor: 'background-color',
@@ -23,7 +28,8 @@ const Container = styled.a.attrs((props) => ({
     textAlign: 'text-align',
     font: 'font',
     padding: 'padding',
-    margin: 'margin'
+    margin: 'margin',
+    roundCorners: 'border-radius'
   })}
 `;
 
@@ -37,6 +43,7 @@ const Link: Component<{ to: string; value: any }> = ({
   </Container>
 );
 
+Link.paddable = true;
 Link.canReceive = [];
 Link.props = {
   value: {
@@ -88,6 +95,32 @@ Link.props = {
     opacity: {
       type: PropTypes.Length,
       default: '100%',
+      editor: EditorTypes.Slider
+    },
+    border: {
+      borderColor: {
+        type: PropTypes.Color,
+        default: 'black',
+        editor: {
+          type: EditorTypes.Color,
+          title: 'Border Color',
+          root: true
+        },
+        required: false,
+        enabled: false
+      },
+      borderWidth: {
+        type: PropTypes.Length,
+        default: '0px',
+        editor: {
+          type: EditorTypes.Slider,
+          title: 'Border Width'
+        }
+      }
+    },
+    roundCorners: {
+      type: PropTypes.Length,
+      default: '0px',
       editor: EditorTypes.Slider
     },
     color: {
