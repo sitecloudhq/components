@@ -96,7 +96,13 @@ export class Rect {
   }
 
   static toProp(value = RectDefaultOptions) {
-    return `${value.top} ${value.right} ${value.bottom} ${value.left}`;
+    // For backward compatibility
+    const safeValue = Object.keys(value).reduce((acc, key) => {
+      acc[key] =
+        typeof value[key] === 'number' ? `${value[key]}px` : value[key];
+      return acc;
+    }, {});
+    return `${safeValue.top} ${safeValue.right} ${safeValue.bottom} ${safeValue.left}`;
   }
 
   static get px() {
