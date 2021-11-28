@@ -13,17 +13,16 @@ export const image_gallery = () => (
     gap="15px"
     gallery="irregular"
     width="100%"
-    height="10vw"
     images={{
       sources: [
-        'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554__340.jpg',
         'https://i.cbc.ca/1.5256404.1566499707!/fileImage/httpImage/cat-behaviour.jpg',
         'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyMzE1Mzk0fHxlbnwwfHx8fA%3D%3D&w=1000&q=80',
         'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554__340.jpg',
         'https://i.cbc.ca/1.5256404.1566499707!/fileImage/httpImage/cat-behaviour.jpg',
         'https://i.cbc.ca/1.5256404.1566499707!/fileImage/httpImage/cat-behaviour.jpg',
         'https://i.cbc.ca/1.5256404.1566499707!/fileImage/httpImage/cat-behaviour.jpg',
-        'https://i.cbc.ca/1.5256404.1566499707!/fileImage/httpImage/cat-behaviour.jpg'
+        'https://i.cbc.ca/1.5256404.1566499707!/fileImage/httpImage/cat-behaviour.jpg',
+        'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554__340.jpg'
       ]
     }}
   />

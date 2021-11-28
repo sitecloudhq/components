@@ -7,6 +7,8 @@ import { styleProps } from '../utils';
 import { Component } from '../Component';
 import FadeIn from './FadeIn';
 
+const DEFAULT_HEIGHT = 10; // vh
+
 const Image = styled.img`
   width: 100%;
   height: 100%;
@@ -16,7 +18,8 @@ const Image = styled.img`
 const gridGallery = css`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 51vw;
+  grid-auto-rows: ${(props: any) =>
+    props.height ? props.height : `${3 * DEFAULT_HEIGHT}vh`};
 
   ${Image}:nth-child(1n) {
     grid-column: 1;
@@ -33,7 +36,7 @@ const irregularGallery = css`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: ${(props: any) =>
-    props.height ? `minmax(auto, ${props.height})` : '3vw'};
+    props.height ? `minmax(auto, ${props.height})` : `${DEFAULT_HEIGHT}vh`};
 
   ${Image}:nth-child(odd) {
     grid-row: span 3;
@@ -50,6 +53,7 @@ const Container = styled.div`
   ${(props: any) => props.styled}
   ${(props: any) =>
     props.gallery == 'irregular' ? irregularGallery : gridGallery};
+  z-index: 10;
   ${styleProps({
     width: 'width',
     padding: 'padding',
@@ -152,7 +156,7 @@ ImageGallery.props = {
   },
   height: {
     type: PropTypes.Length,
-    default: 'auto',
+    default: DEFAULT_HEIGHT,
     editor: {
       type: EditorTypes.Length,
       title: 'Row Height',
