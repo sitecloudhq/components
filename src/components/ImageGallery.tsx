@@ -19,7 +19,7 @@ const gridGallery = css`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: ${(props: any) =>
-    props.height ? props.height : `${3 * DEFAULT_HEIGHT}vh`};
+    props.height ? `calc(3 * ${props.height})` : `${3 * DEFAULT_HEIGHT}vh`};
 
   ${Image}:nth-child(1n) {
     grid-column: 1;
@@ -156,7 +156,7 @@ ImageGallery.props = {
   },
   height: {
     type: PropTypes.Length,
-    default: DEFAULT_HEIGHT,
+    default: `${DEFAULT_HEIGHT}vh`,
     editor: {
       type: EditorTypes.Length,
       title: 'Row Height',
