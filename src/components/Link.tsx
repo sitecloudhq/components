@@ -33,12 +33,12 @@ const Container = styled.a.attrs((props) => ({
   })}
 `;
 
-const Link: Component<{ to: string; value: any }> = ({
-  to,
+const Link: Component<{ link: string; value: any }> = ({
+  link,
   value,
   ...props
 }) => (
-  <Container {...props} href={to}>
+  <Container {...props} href={link}>
     {value}
   </Container>
 );
@@ -52,7 +52,7 @@ Link.props = {
     editor: EditorTypes.RichInput
   },
   URL: {
-    to: {
+    link: {
       type: PropTypes.String,
       default: '/',
       editor: {
