@@ -17,7 +17,8 @@ const setBase = css`
     padding: 'padding',
     margin: 'margin',
     decoration: 'text-decoration',
-    width: 'width'
+    width: 'width',
+    lineHeight: 'line-height'
   })}
 `;
 
@@ -83,7 +84,7 @@ Heading.props = {
     default: 'Heading',
     editor: EditorTypes.RichInput
   },
-  type: {
+  level: {
     level: {
       type: PropTypes.Array,
       default: Object.keys(headings),
@@ -165,6 +166,14 @@ Heading.props = {
       type: PropTypes.Length,
       default: '100%',
       editor: EditorTypes.Slider
+    },
+    lineHeight: {
+      type: PropTypes.Length,
+      default: 'normal',
+      editor: {
+        type: EditorTypes.Slider,
+        options: ['normal', PropTypes.Length.rem]
+      }
     },
     color: {
       type: PropTypes.Color,
