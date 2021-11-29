@@ -129,9 +129,11 @@ Text.props = {
     },
     lineHeight: {
       type: PropTypes.Length,
-      default: 'auto',
-      editor: EditorTypes.Slider,
-      options: [PropTypes.Length.percentage, PropTypes.Length.auto]
+      default: 'normal',
+      editor: {
+        type: EditorTypes.Slider,
+        options: ['normal', PropTypes.Length.rem]
+      }
     },
     border: {
       borderColor: {
