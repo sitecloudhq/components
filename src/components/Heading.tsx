@@ -66,11 +66,11 @@ const defaultProps: any = {
 const defaultHeading = 'Heading 1';
 
 const Heading: Component<{
-  as: string;
+  level: string;
   value: any;
   paddable: boolean;
-}> = ({ children, as, value, ...props }): ReactElement => {
-  const Element = headings[as] || headings[defaultHeading];
+}> = ({ children, level, value, ...props }): ReactElement => {
+  const Element = headings[level] || headings[defaultHeading];
 
   return <Element {...props} dangerouslySetInnerHTML={{ __html: value }} />;
 };
@@ -84,7 +84,7 @@ Heading.props = {
     editor: EditorTypes.RichInput
   },
   type: {
-    as: {
+    level: {
       type: PropTypes.Array,
       default: Object.keys(headings),
       media: false,
@@ -98,8 +98,8 @@ Heading.props = {
     font: {
       type: PropTypes.Font,
       default: (props: any) => {
-        if (!props || !props.as) return PropTypes.FontDefaultOptions;
-        return defaultProps[props.as];
+        if (!props || !props.level) return PropTypes.FontDefaultOptions;
+        return defaultProps[props.level];
       },
       editor: {
         type: EditorTypes.Font,
