@@ -5,14 +5,14 @@ export const URL = globalThis.URL;
 export const Number = globalThis.Number;
 
 function parseLength(value) {
-  return value ? value.match(/(^.*)(\%|vh|vw|px)/i) : null;
+  return value ? value.match(/(^.*)(\%|vh|vw|rem|px)/i) : null;
 }
 
 export class Length {
   constructor(value) {
-    if (value === 'auto') {
+    if (value === 'auto' || value === 'normal') {
       this.value = 0;
-      this.unit = 'auto';
+      this.unit = value;
     } else {
       const parsed = parseLength(value);
       if (parsed) {
@@ -24,6 +24,7 @@ export class Length {
 
   toString() {
     if (this.unit === 'auto') return 'auto';
+    else if (this.unit === 'normal') return 'normal';
     else return `${this.value}${this.unit}`;
   }
 
@@ -43,12 +44,20 @@ export class Length {
     return 'vw';
   }
 
+  static get rem() {
+    return 'rem';
+  }
+
   static get auto() {
     return 'auto';
   }
 
+  static get normal() {
+    return 'normal';
+  }
+
   static get units() {
-    return ['px', '%', 'vw', 'vh', 'auto'];
+    return ['px', '%', 'vw', 'vh', 'rem', 'auto', 'normal'];
   }
 }
 
