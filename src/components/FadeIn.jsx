@@ -20,11 +20,15 @@ const FadeInSection = ({ children }) => {
   const domRef = React.useRef();
 
   useEffect(() => {
+    let shallUnobserve = false;
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         setVisible(entry.isIntersecting);
+        if (entry.isIntersecting) shallUnobserve = true;
       });
-      observer.unobserve(domRef.current);
+      if (shallUnobserve) {
+        observer.unobserve(domRef.current);
+      }
     });
 
     observer.observe(domRef.current);
