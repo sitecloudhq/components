@@ -10,16 +10,18 @@ const Container = styled.form<{ width?: string | string[] }>`
   display: flex;
   justify-content: center;
   align-content: center;
-  border: ${({ borderColor, borderWidth }: any) =>
-    borderColor && borderWidth
-      ? `${borderWidth} solid ${borderColor}`
-      : 'none'};
+
+  ${({ borderWidth, borderColor }: any) =>
+    borderWidth || borderColor ? `border-style: solid` : null};
+
   ${styleProps({
     width: 'width',
     padding: 'padding',
     margin: 'margin',
     backgroundColor: 'background-color',
-    roundCorners: 'border-radius'
+    roundCorners: 'border-radius',
+    borderWidth: 'border-width',
+    borderColor: 'border-color'
   })}
 `;
 

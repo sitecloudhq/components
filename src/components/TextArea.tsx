@@ -14,10 +14,10 @@ const Container = styled.textarea<{
     cursor: pointer;
   }
   resize: vertical;
-  border: ${({ borderColor, borderWidth }: any) =>
-    borderColor && borderWidth
-      ? `${borderWidth} solid ${borderColor}`
-      : 'none'};
+
+  ${({ borderWidth, borderColor }: any) =>
+    borderWidth || borderColor ? `border-style: solid` : null};
+
   ${styleProps({
     containerWidth: 'width',
     opacity: 'opacity',
@@ -27,7 +27,9 @@ const Container = styled.textarea<{
     backgroundColor: 'background-color',
     padding: 'padding',
     margin: 'margin',
-    roundCorners: 'border-radius'
+    roundCorners: 'border-radius',
+    borderWidth: 'border-width',
+    borderColor: 'border-color'
   })}
 `;
 

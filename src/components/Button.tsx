@@ -13,10 +13,9 @@ const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
   }
-  border: ${({ borderColor, borderWidth }: any) =>
-    borderColor && borderWidth
-      ? `${borderWidth} solid ${borderColor}`
-      : 'none'};
+
+  ${({ borderWidth, borderColor }: any) =>
+    borderWidth || borderColor ? `border-style: solid` : null};
 
   ${styleProps({
     opacity: 'opacity',
@@ -26,7 +25,9 @@ const StyledButton = styled.button`
     backgroundColor: 'background-color',
     padding: 'padding',
     margin: 'margin',
-    roundCorners: 'border-radius'
+    roundCorners: 'border-radius',
+    borderWidth: 'border-width',
+    borderColor: 'border-color'
   })}
 `;
 

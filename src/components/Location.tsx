@@ -13,17 +13,18 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  border: ${({ borderColor, borderWidth }: any) =>
-    borderColor && borderWidth
-      ? `${borderWidth} solid ${borderColor}`
-      : 'none'};
+
+  ${({ borderWidth, borderColor }: any) =>
+    borderWidth || borderColor ? `border-style: solid` : null};
 
   ${styleProps({
     height: 'min-height',
     padding: 'padding',
     margin: 'margin',
     backgroundColor: 'background-color',
-    roundCorners: 'border-radius'
+    roundCorners: 'border-radius',
+    borderWidth: 'border-width',
+    borderColor: 'border-color'
   })}
 `;
 

@@ -16,10 +16,8 @@ const Container = styled.a.attrs((props) => ({
     color: ${(props) => props.color};
   }
 
-  border: ${({ borderColor, borderWidth }: any) =>
-    borderColor && borderWidth
-      ? `${borderWidth} solid ${borderColor}`
-      : 'none'};
+  ${({ borderWidth, borderColor }: any) =>
+    borderWidth || borderColor ? `border-style: solid` : null};
 
   ${styleProps({
     color: 'color',
@@ -29,7 +27,9 @@ const Container = styled.a.attrs((props) => ({
     font: 'font',
     padding: 'padding',
     margin: 'margin',
-    roundCorners: 'border-radius'
+    roundCorners: 'border-radius',
+    borderWidth: 'border-width',
+    borderColor: 'border-color'
   })}
 `;
 

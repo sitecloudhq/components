@@ -9,10 +9,9 @@ import { Component } from '../Component';
 const Container = styled.p`
   ${(props: any) => props.styled}
   word-break: break-word;
-  border: ${({ borderColor, borderWidth }: any) =>
-    borderColor && borderWidth
-      ? `${borderWidth} solid ${borderColor}`
-      : 'none'};
+
+  ${({ borderWidth, borderColor }: any) =>
+    borderWidth || borderColor ? `border-style: solid` : null};
 
   ${styleProps({
     color: 'color',
@@ -24,7 +23,9 @@ const Container = styled.p`
     margin: 'margin',
     decoration: 'text-decoration',
     width: 'width',
-    lineHeight: 'line-height'
+    lineHeight: 'line-height',
+    borderWidth: 'border-width',
+    borderColor: 'border-color'
   })}
 `;
 

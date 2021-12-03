@@ -9,10 +9,10 @@ import { Component } from '../Component';
 const Container = styled.img`
   ${(props: any) => props.styled}
   object-fit: ${(props: any) => (props.resize ? props.resize : 'cover')};
-  border: ${({ borderColor, borderWidth }: any) =>
-    borderColor && borderWidth
-      ? `${borderWidth} solid ${borderColor}`
-      : 'none'};
+
+  ${({ borderWidth, borderColor }: any) =>
+    borderWidth || borderColor ? `border-style: solid` : null};
+
   box-shadow: ${({
     shadowColor,
     shadowHorizontal,
@@ -30,7 +30,9 @@ const Container = styled.img`
     width: 'width',
     height: 'height',
     padding: 'padding',
-    margin: 'margin'
+    margin: 'margin',
+    borderWidth: 'border-width',
+    borderColor: 'border-color'
   })}
 `;
 
