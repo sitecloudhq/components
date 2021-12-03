@@ -54,7 +54,7 @@ Link.props = {
   URL: {
     link: {
       type: PropTypes.String,
-      default: '/',
+      default: '',
       editor: {
         type: EditorTypes.Input,
         showTitle: false
