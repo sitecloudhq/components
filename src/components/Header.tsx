@@ -147,6 +147,7 @@ Header.props = {
   slideSpeed: {
     type: PropTypes.Number,
     default: DEFAULT_SLIDE_SPEED,
+    media: false,
     editor: EditorTypes.Slider
   },
   width: {

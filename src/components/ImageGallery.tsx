@@ -127,6 +127,7 @@ ImageGallery.props = {
   gap: {
     type: PropTypes.Length,
     default: '10px',
+    media: false,
     editor: {
       type: EditorTypes.Length,
       options: [PropTypes.Length.px]
@@ -135,6 +136,7 @@ ImageGallery.props = {
   gallery: {
     type: PropTypes.Array,
     default: ['grid', 'irregular'],
+    media: false,
     editor: {
       type: EditorTypes.Combo,
       title: 'Gallery Type'
