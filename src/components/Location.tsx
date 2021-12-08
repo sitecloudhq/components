@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { ImageAlt as Icon } from 'styled-icons/boxicons-regular';
 import { Component } from '../Component';
 import { EditorTypes, PropTypes } from '../types';
@@ -18,7 +18,8 @@ const Container = styled.div`
     borderWidth || borderColor ? `border-style: solid` : null};
 
   ${styleProps({
-    height: 'min-height',
+    width: 'width',
+    height: 'height',
     padding: 'padding',
     margin: 'margin',
     backgroundColor: 'background-color',
@@ -28,13 +29,11 @@ const Container = styled.div`
   })}
 `;
 
-const Content = styled.div<{ width: string | null }>`
+const Content = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  ${styleProps({
-    width: 'width'
-  })};
+  width: 100%;
 `;
 
 const MapContainer = styled.div`
@@ -43,11 +42,10 @@ const MapContainer = styled.div`
 
 const Location: Component<{
   location: string;
-  width: string;
   google_api_key: string;
-}> = ({ children, location, width, google_api_key, ...props }) => (
+}> = ({ children, location, google_api_key, ...props }) => (
   <Container {...props}>
-    <Content width={width}>
+    <Content>
       {children}
       <MapContainer>
         {location && location != '' && (
@@ -77,22 +75,24 @@ Location.props = {
     type: PropTypes.Length,
     default: '100%',
     editor: {
-      type: EditorTypes.Length,
       options: [
         PropTypes.Length.px,
         PropTypes.Length.percentage,
+        PropTypes.Length.vw,
+        PropTypes.Length.vh,
         PropTypes.Length.auto
       ]
     }
   },
   height: {
     type: PropTypes.Length,
-    default: 'auto',
+    default: '100%',
     editor: {
-      type: EditorTypes.Length,
       options: [
         PropTypes.Length.px,
         PropTypes.Length.percentage,
+        PropTypes.Length.vw,
+        PropTypes.Length.vh,
         PropTypes.Length.auto
       ]
     }
@@ -128,7 +128,6 @@ Location.props = {
         type: PropTypes.Color,
         default: 'black',
         editor: {
-          type: EditorTypes.Color,
           title: 'Border Color'
         },
         required: false,
@@ -138,7 +137,6 @@ Location.props = {
         type: PropTypes.Length,
         default: '0px',
         editor: {
-          type: EditorTypes.Slider,
           title: 'Border Width'
         }
       }
@@ -152,7 +150,6 @@ Location.props = {
       type: PropTypes.Color,
       default: 'black',
       editor: {
-        type: EditorTypes.Color,
         title: 'Background Color'
       },
       required: false,

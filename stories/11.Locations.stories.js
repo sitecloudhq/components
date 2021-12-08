@@ -9,8 +9,8 @@ export default {
 
 export const location1 = () => (
   <Location
-    width="90%"
-    height="50vw"
+    width="50vw"
+    height="50vh"
     padding={{ top: 50, left: 20, bottom: 50, right: 20 }}
     borderWidth="1px"
     borderColor="#DDDDDD"
