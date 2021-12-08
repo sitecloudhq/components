@@ -13,13 +13,13 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
+  box-sizing: border-box;
   ${({ borderWidth, borderColor }: any) =>
     borderWidth || borderColor ? `border-style: solid` : null};
 
   ${styleProps({
     width: 'width',
-    height: 'height',
+    height: 'min-height',
     padding: 'padding',
     margin: 'margin',
     backgroundColor: 'background-color',
