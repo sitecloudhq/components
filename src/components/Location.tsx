@@ -66,9 +66,14 @@ const Location: Component<{
 Location.paddable = true;
 Location.canReceive = [];
 Location.props = {
+  location: {
+    type: PropTypes.String,
+    default: 'Eiffel Tower, Paris France',
+    editor: EditorTypes.Input
+  },
   width: {
     type: PropTypes.Length,
-    default: '50%',
+    default: '100%',
     editor: {
       type: EditorTypes.Length,
       options: [
