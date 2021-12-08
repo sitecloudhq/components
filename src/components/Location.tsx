@@ -50,14 +50,16 @@ const Location: Component<{
     <Content width={width}>
       {children}
       <MapContainer>
-        <iframe
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          loading="lazy"
-          frameBorder="0"
-          src={`https://www.google.com/maps/embed/v1/place?key=${google_api_key}&q=${location}`}
-        />
+        {location && location != '' && (
+          <iframe
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            loading="lazy"
+            frameBorder="0"
+            src={`https://www.google.com/maps/embed/v1/place?key=${google_api_key}&q=${location}`}
+          />
+        )}
       </MapContainer>
     </Content>
   </Container>
