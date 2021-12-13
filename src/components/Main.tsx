@@ -201,10 +201,7 @@ Main.props = {
     backgroundColor: {
       type: PropTypes.String,
       default: '#ffffff',
-      editor: {
-        type: EditorTypes.Color,
-        title: 'Fill'
-      },
+      editor: EditorTypes.Color,
       required: false,
       enabled: false
     },
