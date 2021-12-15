@@ -33,20 +33,20 @@ const Container = styled.a.attrs((props) => ({
   })}
 `;
 
-const Link: Component<{ link: string; value: any }> = ({
+const Link: Component<{ link: string; text: any }> = ({
   link,
-  value,
+  text,
   ...props
 }) => (
   <Container {...props} href={link}>
-    {value}
+    {text}
   </Container>
 );
 
 Link.paddable = true;
 Link.canReceive = [];
 Link.props = {
-  value: {
+  text: {
     type: PropTypes.String,
     default: 'Link',
     editor: EditorTypes.RichInput

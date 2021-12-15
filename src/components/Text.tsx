@@ -29,15 +29,15 @@ const Container = styled.p`
   })}
 `;
 
-const Text: Component<{ value: any }> = ({ value, ...props }) => (
-  <Container {...props} dangerouslySetInnerHTML={{ __html: value }} />
+const Text: Component<{ text: any }> = ({ text, ...props }) => (
+  <Container {...props} dangerouslySetInnerHTML={{ __html: text }} />
 );
 
 Text.canReceive = [];
 Text.paddable = true;
 
 Text.props = {
-  value: {
+  text: {
     type: PropTypes.String,
     default: 'This is a paragraph',
     editor: EditorTypes.RichInput

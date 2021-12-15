@@ -31,15 +31,15 @@ const StyledButton = styled.button`
   })}
 `;
 
-const Button: Component<{ value: any }> = ({ value, ...props }) => (
-  <StyledButton {...props}>{value}</StyledButton>
+const Button: Component<{ text: any }> = ({ text, ...props }) => (
+  <StyledButton {...props}>{text}</StyledButton>
 );
 
 Button.paddable = true;
 Button.canReceive = [];
 Button.props = {
   text: {
-    value: {
+    text: {
       types: PropTypes.String,
       default: 'Button',
       editor: { type: EditorTypes.Input, showTitle: false }

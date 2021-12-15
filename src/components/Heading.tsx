@@ -68,18 +68,18 @@ const defaultHeading = 'Heading 1';
 
 const Heading: Component<{
   level: string;
-  value: any;
+  text: any;
   paddable: boolean;
-}> = ({ children, level, value, ...props }): ReactElement => {
+}> = ({ children, level, text, ...props }): ReactElement => {
   const Element = headings[level] || headings[defaultHeading];
 
-  return <Element {...props} dangerouslySetInnerHTML={{ __html: value }} />;
+  return <Element {...props} dangerouslySetInnerHTML={{ __html: text }} />;
 };
 
 Heading.paddable = true;
 Heading.canReceive = [];
 Heading.props = {
-  value: {
+  text: {
     type: PropTypes.String,
     default: 'Heading',
     editor: EditorTypes.RichInput
