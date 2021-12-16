@@ -45,6 +45,11 @@ Button.props = {
       editor: { type: EditorTypes.Input, showTitle: false }
     }
   },
+  type: {
+    type: PropTypes.Array,
+    default: ['button', 'submit', 'reset'],
+    editor: EditorTypes.Combo
+  },
   font: {
     font: {
       type: PropTypes.Font,
