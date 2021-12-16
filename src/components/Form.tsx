@@ -74,6 +74,11 @@ const Form: Component<{
 Form.paddable = true;
 Form.canReceive = [];
 Form.props = {
+  action: {
+    type: PropTypes.String,
+    default: 'mailto:someone@example.com',
+    editor: EditorTypes.Input
+  },
   width: {
     type: PropTypes.Length,
     default: '50%',
