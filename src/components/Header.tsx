@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { ImageAlt as Icon } from 'styled-icons/boxicons-regular';
 import { Component } from '../Component';
 import { EditorTypes, PropTypes } from '../types';
@@ -19,7 +19,7 @@ const animation = (
   const slidePct = 100 / (slides - 1);
   const secPct = slidePct / (transitionSpeed + slideSpeed);
   const transPct = transitionSpeed * secPct;
-  return css`
+  return keyframes`
     ${Array.from(Array(slides).keys())
       .map((_, slide) => {
         if (slide == 0) {
@@ -46,17 +46,17 @@ const SlideShow = styled.div<{
   width: 100%;
   height: 100%;
   display: flex;
-  animation: ${(props) =>
-    `slideshow ${
-      props.slides * (props.slideSpeed + props.transitionSpeed)
-    }s linear infinite`};
   ${(props: any) =>
     props?.slides > 1
-      ? `@keyframes slideshow { ${animation(
-          props.slides + 1,
-          props.slideSpeed,
-          props.transitionSpeed
-        )}}`
+      ? css`
+          animation: ${animation(
+              props.slides + 1,
+              props.slideSpeed,
+              props.transitionSpeed
+            )}
+            ${props.slides * (props.slideSpeed + props.transitionSpeed)}s linear
+            infinite;
+        `
       : null};
 `;
 
