@@ -8,6 +8,7 @@ import { Component } from '../Component';
 
 const Container = styled.textarea<{
   containerWidth?: string | string[];
+  containerHeight?: string | string[];
 }>`
   ${(props: any) => props.styled}
   &:hover {
@@ -20,6 +21,7 @@ const Container = styled.textarea<{
 
   ${styleProps({
     containerWidth: 'width',
+    containerHeight: 'height',
     opacity: 'opacity',
     textAlign: 'text-align',
     font: 'font',
@@ -38,12 +40,21 @@ const TextArea: Component<{
   name?: string;
   rows?: number;
   width?: string | string[];
-}> = ({ placeholder, name, rows, width = '100%', ...props }) => (
+  height?: string | string[];
+}> = ({
+  placeholder,
+  name,
+  rows,
+  width = '100%',
+  height = 'auto',
+  ...props
+}) => (
   <Container
     placeholder={placeholder}
     rows={rows}
     name={name}
     containerWidth={width}
+    containerHeight={height}
     {...props}
   />
 );
@@ -74,6 +85,22 @@ TextArea.props = {
       options: [
         PropTypes.Length.px,
         PropTypes.Length.percentage,
+        PropTypes.Length.vw,
+        PropTypes.Length.vh,
+        PropTypes.Length.auto
+      ]
+    }
+  },
+  height: {
+    type: PropTypes.Length,
+    default: 'auto',
+    editor: {
+      type: EditorTypes.Length,
+      options: [
+        PropTypes.Length.px,
+        PropTypes.Length.percentage,
+        PropTypes.Length.vw,
+        PropTypes.Length.vh,
         PropTypes.Length.auto
       ]
     }

@@ -17,45 +17,25 @@ export const header1 = () => (
     contentWidth={['50%', '50%', '90%', '90%']}
   >
     <Heading
-      font={[
-        {
-          family: 'Open Sans',
-          style: 'normal',
-          weight: 400,
-          size: '42px'
-        },
-        {
-          family: 'Open Sans',
-          style: 'normal',
-          weight: 400,
-          size: '42px'
-        },
-        {
-          family: 'Open Sans',
-          style: 'normal',
-          weight: 400,
-          size: '22px'
-        },
-        {
-          family: 'Open Sans',
-          style: 'normal',
-          weight: 400,
-          size: '22px'
-        }
-      ]}
+      font={{
+        family: 'Open Sans',
+        style: 'normal',
+        weight: 400,
+        size: '42px'
+      }}
       margin={{ top: 0, bottom: 0, right: 0, left: 0 }}
       color="#1A1A1A"
-      value="Main headline"
+      text="Main headline"
     />
     <Text
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '30px' }}
       color="#1A1A1A"
-      value="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
+      text="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
     />
     <Button
       padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
       backgroundColor="white"
-      value="Call to Action"
+      text="Call to Action"
     />
   </Header>
 );
@@ -72,17 +52,17 @@ export const header2 = () => (
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '42px' }}
       margin={{ top: 0, bottom: 0, right: 0, left: 0 }}
       color="#1A1A1A"
-      value="Main headline"
+      text="Main headline"
     />
     <Text
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '30px' }}
       color="#1A1A1A"
-      value="Proactively envisioned multimedia based expertise and cross-media growth strategies."
+      text="Proactively envisioned multimedia based expertise and cross-media growth strategies."
     />
     <Button
       padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
       backgroundColor="white"
-      value="Call to Action"
+      text="Call to Action"
     />
   </Header>
 );
@@ -99,17 +79,17 @@ export const header3 = () => (
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '42px' }}
       margin={{ top: 0, bottom: 0, right: 0, left: 0 }}
       color="#1A1A1A"
-      value="Main headline"
+      text="Main headline"
     />
     <Text
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '30px' }}
       color="#1A1A1A"
-      value="Proactively envisioned multimedia based expertise and cross-media growth strategies."
+      text="Proactively envisioned multimedia based expertise and cross-media growth strategies."
     />
     <Button
       padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
       backgroundColor="white"
-      value="Call to Action"
+      text="Call to Action"
     />
   </Header>
 );
@@ -125,12 +105,12 @@ export const header4 = () => (
     <Text
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '34px' }}
       color="#1A1A1A"
-      value="Proactively envisioned multimedia based expertise and cross-media growth strategies."
+      text="Proactively envisioned multimedia based expertise and cross-media growth strategies."
     />
     <Button
       padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
       backgroundColor="white"
-      value="Call to Action"
+      text="Call to Action"
     />
   </Header>
 );
@@ -152,17 +132,17 @@ export const header5 = () => (
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '42px' }}
       margin={{ top: 0, bottom: 0, right: 0, left: 0 }}
       color="white"
-      value="Main headline"
+      text="Main headline"
     />
     <Text
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '30px' }}
       color="white"
-      value="Proactively envisioned multimedia based expertise and cross-media growth strategies."
+      text="Proactively envisioned multimedia based expertise and cross-media growth strategies."
     />
     <Button
       padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
       backgroundColor="white"
-      value="Call to Action"
+      text="Call to Action"
     />
   </Header>
 );
@@ -176,19 +156,19 @@ export const header6 = () => (
     roundCorners="10px"
     images={{
       sources: [
-        'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554__340.jpg'
+        'https://cdn.sitecloud.net/pixabay.com/get/g3aedb404da648918f5a3e0a870882fb0f01296152e0c2a543277dd4247709364942e7d59977ab8efd3a32bd7684e6fdbf47edf24aaa5e006edbf0695b944fa41_1280.jpg'
       ]
     }}
   >
     <Text
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '34px' }}
       color="white"
-      value="Proactively envisioned multimedia based expertise and cross-media growth strategies."
+      text="Proactively envisioned multimedia based expertise and cross-media growth strategies."
     />
     <Button
       padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
       backgroundColor="white"
-      value="Call to Action"
+      text="Call to Action"
     />
   </Header>
 );
@@ -216,13 +196,13 @@ export const header7 = () => (
           }}
           margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
           color="black"
-          value="Proactively envisioned multimedia based expertise and cross-media growth strategies."
+          text="Proactively envisioned multimedia based expertise and cross-media growth strategies."
         />
         <Button
           padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
           color="white"
           backgroundColor="#433F3F"
-          value="Call to Action"
+          text="Call to Action"
         />
       </Column>
     </Row>
@@ -240,21 +220,21 @@ export const header_with_slideshow = () => (
     alignment="left"
     images={{
       sources: [
-        'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554__340.jpg',
-        'https://i.cbc.ca/1.5256404.1566499707!/fileImage/httpImage/cat-behaviour.jpg',
-        'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyMzE1Mzk0fHxlbnwwfHx8fA%3D%3D&w=1000&q=80'
+        'https://cdn.sitecloud.net/pixabay.com/get/g3aedb404da648918f5a3e0a870882fb0f01296152e0c2a543277dd4247709364942e7d59977ab8efd3a32bd7684e6fdbf47edf24aaa5e006edbf0695b944fa41_1280.jpg',
+        'https://cdn.sitecloud.net/pixabay.com/get/g795f0614121a04756a479d4b1186f3f82a24c415fc5ef340620650d155286c4967d10d11672e090992f70d3a086847df64b77ebeb14f7ec04e475e16195ee757_1280.jpg',
+        'https://cdn.sitecloud.net/pixabay.com/get/g8c23c2c7ac37f4749ce41695ff73e0d2017838de9c058b254c899de560bbcd34774ac5e1435a5b9c32defdc25320852d3fbd5e3083217b6e7955ec6bd7e0d2d0_1280.jpg'
       ]
     }}
   >
     <Heading
       margin={{ top: 0, bottom: 0, right: 0, left: 0 }}
       color="white"
-      value="This is a header"
+      text="This is a header"
     />
-    <Text color="white" value="This is a paragraph" />
+    <Text color="white" text="This is a paragraph" />
     <Button
       padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
-      value="Call to Action"
+      text="Call to Action"
     />
   </Header>
 );
