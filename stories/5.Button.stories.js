@@ -10,9 +10,5 @@ export default {
 };
 
 export const button = () => (
-  <Button
-    value={text('value', 'Button')}
-    borderColor="black"
-    borderWidth="1px"
-  />
+  <Button text={text('text', 'Button')} borderColor="black" borderWidth="1px" />
 );

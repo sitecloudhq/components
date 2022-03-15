@@ -21,7 +21,7 @@ export const contact1 = () => (
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '30px' }}
       margin={{ top: 0, left: 0, bottom: 20, right: 0 }}
       color="#1A1A1A"
-      value="Contact Us"
+      text="Contact Us"
     />
     <Input
       width="100%"
@@ -56,7 +56,7 @@ export const contact1 = () => (
       margin={{ top: 10, left: 0, right: 0, bottom: 10 }}
       backgroundColor="#555555"
       color="white"
-      value="Send"
+      text="Send"
     />
   </Form>
 );
@@ -75,7 +75,7 @@ export const contact2 = () => (
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '30px' }}
       margin={{ top: 0, left: 0, bottom: 20, right: 0 }}
       color="#1A1A1A"
-      value="Contact Us"
+      text="Contact Us"
     />
     <Text
       width="100%"
@@ -84,7 +84,7 @@ export const contact2 = () => (
       margin={{ top: 0, left: 0, bottom: 0, right: 0 }}
       font={{ family: 'Open Sans', style: 'normal', weight: 600, size: '20px' }}
       color="#1A1A1A"
-      value="Kitchen Restaurant Inc."
+      text="Kitchen Restaurant Inc."
     />
     <Text
       width="100%"
@@ -92,14 +92,14 @@ export const contact2 = () => (
       margin={{ top: 0, left: 0, bottom: 0, right: 0 }}
       font={{ family: 'Open Sans', style: 'normal', weight: 300, size: '20px' }}
       color="#1A1A1A"
-      value="(555) - 122222"
+      text="(555) - 122222"
     />
     <Text
       width="100%"
       lineHeight="130%"
       font={{ family: 'Open Sans', style: 'normal', weight: 400, size: '20px' }}
       color="#1A1A1A"
-      value="New Line St 23 - San Francisco"
+      text="New Line St 23 - San Francisco"
     />
     <Input
       width="100%"
@@ -134,7 +134,7 @@ export const contact2 = () => (
       margin={{ top: 10, left: 0, right: 0, bottom: 10 }}
       backgroundColor="#555555"
       color="white"
-      value="Send"
+      text="Send"
     />
   </Form>
 );

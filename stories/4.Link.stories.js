@@ -10,5 +10,5 @@ export default {
 };
 
 export const link = () => (
-  <Link link={text('link', '/')} value={text('value', 'Link')} />
+  <Link link={text('link', '/')} text={text('text', 'Link')} />
 );

@@ -30,16 +30,16 @@ export const FadeInContainers = () => (
         <Heading
           margin={{ top: 0, bottom: 0, right: 0, left: 0 }}
           color="#1A1A1A"
-          value="Main headline"
+          text="Main headline"
         />
         <Text
           color="#1A1A1A"
-          value="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
+          text="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
         />
         <Button
           padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
           backgroundColor="white"
-          value="Call to Action"
+          text="Call to Action"
         />
       </Header>
     </FadeIn>
@@ -55,16 +55,16 @@ export const FadeInContainers = () => (
         <Heading
           margin={{ top: 0, bottom: 0, right: 0, left: 0 }}
           color="#1A1A1A"
-          value="Main headline"
+          text="Main headline"
         />
         <Text
           color="#1A1A1A"
-          value="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
+          text="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
         />
         <Button
           padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
           backgroundColor="white"
-          value="Call to Action"
+          text="Call to Action"
         />
       </Header>
     </FadeIn>
@@ -80,16 +80,16 @@ export const FadeInContainers = () => (
         <Heading
           margin={{ top: 0, bottom: 0, right: 0, left: 0 }}
           color="#1A1A1A"
-          value="Main headline"
+          text="Main headline"
         />
         <Text
           color="#1A1A1A"
-          value="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
+          text="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
         />
         <Button
           padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
           backgroundColor="white"
-          value="Call to Action"
+          text="Call to Action"
         />
       </Header>
     </FadeIn>
@@ -105,16 +105,16 @@ export const FadeInContainers = () => (
         <Heading
           margin={{ top: 0, bottom: 0, right: 0, left: 0 }}
           color="#1A1A1A"
-          value="Main headline"
+          text="Main headline"
         />
         <Text
           color="#1A1A1A"
-          value="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
+          text="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
         />
         <Button
           padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
           backgroundColor="white"
-          value="Call to Action"
+          text="Call to Action"
         />
       </Header>
     </FadeIn>
@@ -130,16 +130,16 @@ export const FadeInContainers = () => (
         <Heading
           margin={{ top: 0, bottom: 0, right: 0, left: 0 }}
           color="#1A1A1A"
-          value="Main headline"
+          text="Main headline"
         />
         <Text
           color="#1A1A1A"
-          value="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
+          text="Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies.Proactively envisioned multimedia based expertise and cross-media growth strategies."
         />
         <Button
           padding={{ top: 10, bottom: 10, right: 20, left: 20 }}
           backgroundColor="white"
-          value="Call to Action"
+          text="Call to Action"
         />
       </Header>
     </FadeIn>

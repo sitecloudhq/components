@@ -11,4 +11,4 @@ export default {
   decorators: [withKnobs]
 };
 
-export const heading = () => <Heading value="This is a header" />;
+export const heading = () => <Heading text="This is a header" />;

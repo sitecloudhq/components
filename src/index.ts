@@ -14,6 +14,7 @@ import Form from './components/Form';
 import Input from './components/Input';
 import TextArea from './components/TextArea';
 import FadeIn from './components/FadeIn';
+import Embed from './components/Embed';
 
 import { PropTypes, EditorTypes } from './types';
 import { styleProps, falltroughValues } from './utils';
@@ -39,6 +40,7 @@ export {
   Input,
   TextArea,
   FadeIn,
+  Embed,
   styleProps,
   falltroughValues
 };
