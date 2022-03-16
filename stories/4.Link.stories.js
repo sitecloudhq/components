@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { withKnobs, color, select, number, text } from '@storybook/addon-knobs';
 import Link from '../src/components/Link';
 

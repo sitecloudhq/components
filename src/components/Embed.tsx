@@ -13,18 +13,15 @@ const Container = styled.iframe`
   })}
 `;
 
-const Embed: Component = (props) => {
-  return <Container {...props} frameBorder="0" />;
+const Embed: Component<{ source: string }> = ({ source, ...props }) => {
+  return <Container src={source} {...props} frameBorder="0" />;
 };
 
 Embed.props = {
   source: {
     type: PropTypes.String,
     default: '',
-    editor: {
-      type: EditorTypes.Input,
-      showTitle: false
-    }
+    editor: EditorTypes.Input
   },
   dimensions: {
     width: {
