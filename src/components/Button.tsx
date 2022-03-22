@@ -31,8 +31,14 @@ const StyledButton = styled.button`
   })}
 `;
 
-const Button: Component<{ text: any }> = ({ text, ...props }) => (
-  <StyledButton {...props}>{text}</StyledButton>
+const Button: Component<{ text?: any; buttonType?: any }> = ({
+  text,
+  buttonType,
+  ...props
+}) => (
+  <StyledButton type={buttonType} {...props}>
+    {text}
+  </StyledButton>
 );
 
 Button.paddable = true;
@@ -45,7 +51,7 @@ Button.props = {
       editor: { type: EditorTypes.Input, showTitle: false }
     }
   },
-  type: {
+  buttonType: {
     type: PropTypes.Array,
     default: ['button', 'submit', 'reset'],
     editor: EditorTypes.Combo

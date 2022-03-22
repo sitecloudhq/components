@@ -8,10 +8,12 @@ type AsyncPropsFn = ({
   devMode?: boolean;
 }) => any;
 
+type Props = { [key: string]: any } & { type?: never };
+
 export interface Component<P = {}> extends FC<P> {
   paddable?: boolean;
   canReceive?: Array<string>;
   icon?: ReactElement;
-  props?: any;
+  props?: Props;
   asyncProps?: AsyncPropsFn;
 }
