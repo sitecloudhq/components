@@ -45,7 +45,7 @@ const Container = styled(DefaultRow)<Props>`
   })}
 `;
 
-const Row: Component<HTMLElement> = forwardRef(
+const Row: Component<{ props?: any }> = forwardRef(
   ({ children, ...props }, ref) => {
     return (
       <Container ref={ref} {...props}>
