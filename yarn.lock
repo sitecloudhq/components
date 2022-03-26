@@ -1613,10 +1613,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@sitecloud/react-styled-flexboxgrid@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@sitecloud/react-styled-flexboxgrid/-/react-styled-flexboxgrid-4.0.0.tgz#abb8a9ced2d0e08db737bfeead949d79a1a7ae93"
-  integrity sha512-aazjG+hRa7mZsjUiGZyBZ4dxZJCHIkLllJ6x+/eAPsoVn5q8d0sNpdGXYmDDxsCE/ssHs049H3LCG4tZ+H9hGA==
+"@sitecloud/react-styled-flexboxgrid@4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@sitecloud/react-styled-flexboxgrid/-/react-styled-flexboxgrid-4.0.2.tgz#bca3ca6405b8eea081314ff5b04a190d2fa8da0a"
+  integrity sha512-swA4ttMY/47zIMvvi0WdtJMSA5RFgkiBMf2Ha08efMZiKwYBinLXucDKQiaolNAFZNx0atLsXGLjVpC6WhU4yA==
   dependencies:
     lodash.isinteger "^4.0.4"
 
