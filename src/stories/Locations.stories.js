@@ -1,7 +1,5 @@
 import React from 'react';
-
-import { withKnobs, color, number } from '@storybook/addon-knobs';
-import { Location, Text } from '../src';
+import { Location, Text } from '..';
 
 export default {
   title: 'Location'

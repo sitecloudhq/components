@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Row as DefaultRow } from 'react-styled-flexboxgrid';
+import { Row as DefaultRow } from '@sitecloud/react-styled-flexboxgrid';
 import styled from 'styled-components';
 import { ViewHeadline as Icon } from 'styled-icons/material';
 
@@ -58,7 +58,6 @@ const Row: Component<{ props?: any }> = forwardRef(
 Row.icon = <Icon size="1.6rem" />;
 Row.canReceive = ['Column'];
 Row.paddable = true;
-
 Row.props = {
   dimensions: {
     width: {

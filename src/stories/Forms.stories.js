@@ -1,7 +1,5 @@
 import React from 'react';
-
-import { withKnobs, color, number } from '@storybook/addon-knobs';
-import { TextArea, Input, Form, Heading, Text, Button } from '../src';
+import { TextArea, Input, Form, Heading, Text, Button } from '..';
 
 export default {
   title: 'Forms'

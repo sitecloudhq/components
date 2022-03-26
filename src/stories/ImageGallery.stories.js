@@ -1,7 +1,5 @@
 import React from 'react';
-
-import { withKnobs, color, number } from '@storybook/addon-knobs';
-import { ImageGallery } from '../src';
+import { ImageGallery } from '..';
 
 export default {
   title: 'Image gallery'

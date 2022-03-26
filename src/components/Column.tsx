@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Col as DefaultCol } from 'react-styled-flexboxgrid';
+import { Col as DefaultCol } from '@sitecloud/react-styled-flexboxgrid';
 import { ViewColumn as Icon } from 'styled-icons/material';
 
 import { PropTypes, EditorTypes } from '../types';

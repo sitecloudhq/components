@@ -1,7 +1,5 @@
 import React from 'react';
-
-import { withKnobs, color, number } from '@storybook/addon-knobs';
-import { Row, Column } from '../src';
+import { Row, Column } from '..';
 
 export default {
   title: 'Flexbox'

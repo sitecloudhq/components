@@ -1,7 +1,5 @@
 import React from 'react';
-
-import { withKnobs, color, number } from '@storybook/addon-knobs';
-import { Row, Column, Image, Header, Heading, Text, Button } from '../src';
+import { Row, Column, Image, Header, Heading, Text, Button } from '..';
 
 export default {
   title: 'Header'
