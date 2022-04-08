@@ -72,6 +72,7 @@ const FullScreenOverlay = styled.div<{ visible: boolean }>`
   justify-content: center;
   align-items: center;
   opacity: 1;
+  z-index: 10;
   animation-name: fadeInOpacity;
   animation-duration: 0.2s;
   @keyframes fadeInOpacity {
