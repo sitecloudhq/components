@@ -1,19 +1,21 @@
 import { FC, ReactElement } from 'react';
 
-type AsyncPropsFn = ({
-  location,
-  devMode
-}: {
+declare type Props = {
+  [key: string]: any;
+} & {
+  type?: never;
+};
+
+export type AsyncProps = {
   location?: string;
   devMode?: boolean;
-}) => any;
-
-type Props = { [key: string]: any } & { type?: never };
+  [key: string]: any;
+};
 
 export interface Component<P = {}> extends FC<P> {
   paddable?: boolean;
   canReceive?: Array<string>;
   icon?: ReactElement;
   props?: Props;
-  asyncProps?: AsyncPropsFn;
+  asyncProps?: ({ location, devMode }: AsyncProps) => any;
 }

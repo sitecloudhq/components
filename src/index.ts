@@ -18,9 +18,10 @@ import Embed from './components/Embed';
 
 import { PropTypes, EditorTypes } from './types';
 import { styleProps, falltroughValues } from './utils';
-import { Component } from './Component';
+import { Component, AsyncProps } from './Component';
 
 export {
+  AsyncProps,
   Component,
   PropTypes,
   EditorTypes,
