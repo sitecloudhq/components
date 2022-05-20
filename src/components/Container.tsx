@@ -1,18 +1,11 @@
+import { CropSquare as Icon } from '@styled-icons/material/CropSquare';
 import React from 'react';
 import styled from 'styled-components';
-import { CropSquare as Icon } from '@styled-icons/material/CropSquare';
-
-import { EditorTypes, PropTypes } from '../types';
-import {
-  styleProps,
-  alignItemsValues,
-  justifyContentValues,
-  flexDirectionValues,
-  parseAlignItems,
-  parseJustifyContent,
-  parseFlexDirection
-} from '../utils';
 import { Component } from '../Component';
+import { withFlexboxProps, FlexboxStyleProps } from '../props/flexbox';
+import { withSizeProps, SizeStyleProps } from '../props/size';
+import { EditorTypes, PropTypes } from '../types';
+import { styleProps } from '../utils';
 
 const FlexContainer = styled.section`
   ${(props: any) => props.styled}
@@ -27,24 +20,8 @@ const FlexContainer = styled.section`
       transform: (value: any) => (value ? `url(${value})` : null)
     },
     backgroundSize: 'background-size',
-    width: 'width',
-    height: 'height',
-    maxWidth: 'max-width',
-    maxHeight: 'max-height',
-    minWidth: 'min-width',
-    minHeight: 'min-height',
-    alignItems: {
-      attr: 'align-items',
-      transform: parseAlignItems
-    },
-    justifyContent: {
-      attr: 'justify-content',
-      transform: parseJustifyContent
-    },
-    stack: {
-      attr: 'flex-direction',
-      transform: parseFlexDirection
-    }
+    ...SizeStyleProps,
+    ...FlexboxStyleProps
   })}
 `;
 
@@ -54,120 +31,8 @@ const Container: Component = ({ children, ...props }) => {
 
 Container.paddable = true;
 Container.props = {
-  stack: {
-    stack: {
-      type: PropTypes.Array,
-      default: Object.keys(flexDirectionValues),
-      editor: {
-        type: EditorTypes.Combo,
-        showTitle: false
-      }
-    }
-  },
-  alignments: {
-    justifyContent: {
-      type: PropTypes.Array,
-      default: Object.keys(justifyContentValues),
-      editor: EditorTypes.Combo
-    },
-    alignItems: {
-      type: PropTypes.Array,
-      default: Object.keys(alignItemsValues),
-      editor: EditorTypes.Combo
-    }
-  },
-  dimensions: {
-    width: {
-      type: PropTypes.Length,
-      default: '100%',
-      editor: {
-        type: EditorTypes.Length,
-        options: [
-          PropTypes.Length.px,
-          PropTypes.Length.percentage,
-          PropTypes.Length.vw,
-          PropTypes.Length.vh,
-          PropTypes.Length.auto
-        ]
-      }
-    },
-    height: {
-      type: PropTypes.Length,
-      default: '50px',
-      editor: {
-        type: EditorTypes.Length,
-        options: [
-          PropTypes.Length.px,
-          PropTypes.Length.percentage,
-          PropTypes.Length.vw,
-          PropTypes.Length.vh,
-          PropTypes.Length.auto
-        ]
-      },
-      required: false,
-      enabled: false
-    },
-    maxWidth: {
-      type: PropTypes.Length,
-      default: '100%',
-      editor: {
-        type: EditorTypes.Length,
-        options: [
-          PropTypes.Length.px,
-          PropTypes.Length.percentage,
-          PropTypes.Length.vw,
-          PropTypes.Length.vh
-        ]
-      },
-      required: false,
-      enabled: false
-    },
-    maxHeight: {
-      type: PropTypes.Length,
-      default: '100%',
-      editor: {
-        type: EditorTypes.Length,
-        options: [
-          PropTypes.Length.px,
-          PropTypes.Length.percentage,
-          PropTypes.Length.vw,
-          PropTypes.Length.vh
-        ]
-      },
-      required: false,
-      enabled: false
-    },
-    minWidth: {
-      type: PropTypes.Length,
-      default: '100%',
-      editor: {
-        type: EditorTypes.Length,
-        options: [
-          PropTypes.Length.px,
-          PropTypes.Length.percentage,
-          PropTypes.Length.vw,
-          PropTypes.Length.vh
-        ]
-      },
-      required: false,
-      enabled: false
-    },
-    minHeight: {
-      type: PropTypes.Length,
-      default: '100%',
-      editor: {
-        type: EditorTypes.Length,
-        options: [
-          PropTypes.Length.px,
-          PropTypes.Length.percentage,
-          PropTypes.Length.vw,
-          PropTypes.Length.vh
-        ]
-      },
-      required: false,
-      enabled: false
-    }
-  },
+  ...withFlexboxProps(),
+  dimensions: withSizeProps(),
   padding: {
     type: PropTypes.Rect,
     default: {

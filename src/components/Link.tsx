@@ -3,13 +3,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { PropTypes, EditorTypes } from '../types';
-import { styleProps } from '../utils';
+import { styleProps, flexDirectionValuesHorizontalFirst } from '../utils';
 import { Component } from '../Component';
+import { withBorderProps, BorderStyleProps } from '../props/border';
+import { withMarginProps, MarginStyleProps } from '../props/margin';
+import { withPaddingProps, PaddingStyleProps } from '../props/padding';
+import { withSizeProps, SizeStyleProps } from '../props/size';
+import { withFlexboxProps, FlexboxStyleProps } from '../props/flexbox';
 
 const Container = styled.a.attrs((props) => ({
   href: props.href
 }))`
   ${(props: any) => props.styled}
+  display: flex;
   text-decoration: none;
 
   &:visited {
@@ -25,26 +31,28 @@ const Container = styled.a.attrs((props) => ({
     opacity: 'opacity',
     textAlign: 'text-align',
     font: 'font',
-    padding: 'padding',
-    margin: 'margin',
-    roundCorners: 'border-radius',
-    borderWidth: 'border-width',
-    borderColor: 'border-color'
+    ...SizeStyleProps,
+    ...FlexboxStyleProps,
+    ...PaddingStyleProps,
+    ...MarginStyleProps,
+    ...BorderStyleProps
   })}
 `;
 
 const Link: Component<{ link: string; text: any }> = ({
+  children,
   link,
   text,
   ...props
 }) => (
   <Container {...props} href={link}>
+    {children}
     {text}
   </Container>
 );
 
 Link.paddable = true;
-Link.canReceive = [];
+Link.canReceive = ['Image'];
 Link.props = {
   text: {
     type: PropTypes.String,
@@ -71,56 +79,15 @@ Link.props = {
       }
     }
   },
-  padding: {
-    type: PropTypes.Rect,
-    default: {
-      top: '10px',
-      bottom: '10px',
-      left: '10px',
-      right: '10px'
-    },
-    editor: EditorTypes.Rect
-  },
-  margin: {
-    type: PropTypes.Rect,
-    default: {
-      top: '0px',
-      bottom: '0px',
-      left: '0px',
-      right: '0px'
-    },
-    editor: EditorTypes.Rect
-  },
+  ...withSizeProps('auto'),
+  ...withFlexboxProps(Object.keys(flexDirectionValuesHorizontalFirst)),
+  ...withPaddingProps(),
+  ...withMarginProps(),
+  ...withBorderProps(),
   aspect: {
     opacity: {
       type: PropTypes.Length,
       default: '100%',
-      editor: EditorTypes.Slider
-    },
-    border: {
-      borderColor: {
-        type: PropTypes.Color,
-        default: 'black',
-        editor: {
-          type: EditorTypes.Color,
-          title: 'Border Color',
-          root: true
-        },
-        required: false,
-        enabled: false
-      },
-      borderWidth: {
-        type: PropTypes.Length,
-        default: '0px',
-        editor: {
-          type: EditorTypes.Slider,
-          title: 'Border Width'
-        }
-      }
-    },
-    roundCorners: {
-      type: PropTypes.Length,
-      default: '0px',
       editor: EditorTypes.Slider
     },
     color: {
