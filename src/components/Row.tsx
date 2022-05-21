@@ -59,7 +59,7 @@ Row.icon = <Icon size="1.6rem" />;
 Row.canReceive = ['Column'];
 Row.paddable = true;
 Row.props = {
-  dimensions: {
+  size: {
     width: {
       type: PropTypes.Length,
       default: '100%',

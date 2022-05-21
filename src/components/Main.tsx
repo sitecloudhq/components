@@ -87,7 +87,7 @@ Main.props = {
       editor: EditorTypes.Combo
     }
   },
-  dimensions: {
+  size: {
     width: {
       type: PropTypes.Length,
       default: '100%',

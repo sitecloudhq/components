@@ -117,18 +117,27 @@ Heading.props = {
         'overline'
       ],
       editor: EditorTypes.Combo
+    },
+    color: {
+      type: PropTypes.Color,
+      default: 'black',
+      editor: EditorTypes.Color,
+      required: false,
+      enabled: false
     }
   },
-  width: {
-    type: PropTypes.Length,
-    default: 'auto',
-    editor: {
-      type: EditorTypes.Length,
-      options: [
-        PropTypes.Length.px,
-        PropTypes.Length.percentage,
-        PropTypes.Length.auto
-      ]
+  size: {
+    width: {
+      type: PropTypes.Length,
+      default: 'auto',
+      editor: {
+        type: EditorTypes.Length,
+        options: [
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.auto
+        ]
+      }
     }
   },
   alignment: {
@@ -174,13 +183,6 @@ Heading.props = {
         type: EditorTypes.Slider,
         options: ['normal', PropTypes.Length.rem]
       }
-    },
-    color: {
-      type: PropTypes.Color,
-      default: 'black',
-      editor: EditorTypes.Color,
-      required: false,
-      enabled: false
     }
   }
 };

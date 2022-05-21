@@ -71,18 +71,28 @@ Text.props = {
         'overline'
       ],
       editor: EditorTypes.Combo
+    },
+    color: {
+      type: PropTypes.Color,
+      default: 'black',
+      editor: {
+        type: EditorTypes.Color,
+        title: 'Font Color'
+      }
     }
   },
-  width: {
-    type: PropTypes.Length,
-    default: 'auto',
-    editor: {
-      type: EditorTypes.Length,
-      options: [
-        PropTypes.Length.px,
-        PropTypes.Length.percentage,
-        PropTypes.Length.auto
-      ]
+  size: {
+    width: {
+      type: PropTypes.Length,
+      default: 'auto',
+      editor: {
+        type: EditorTypes.Length,
+        options: [
+          PropTypes.Length.px,
+          PropTypes.Length.percentage,
+          PropTypes.Length.auto
+        ]
+      }
     }
   },
   padding: {
@@ -110,14 +120,6 @@ Text.props = {
       type: PropTypes.Length,
       default: '100%',
       editor: EditorTypes.Slider
-    },
-    color: {
-      type: PropTypes.Color,
-      default: 'black',
-      editor: {
-        type: EditorTypes.Color,
-        title: 'Font Color'
-      }
     },
     backgroundColor: {
       type: PropTypes.Color,

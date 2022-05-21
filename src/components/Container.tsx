@@ -32,7 +32,7 @@ const Container: Component = ({ children, ...props }) => {
 Container.paddable = true;
 Container.props = {
   ...withFlexboxProps(),
-  dimensions: withSizeProps(),
+  size: withSizeProps(),
   padding: {
     type: PropTypes.Rect,
     default: {

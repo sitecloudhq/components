@@ -23,7 +23,7 @@ Embed.props = {
     default: '',
     editor: EditorTypes.Input
   },
-  dimensions: {
+  size: {
     width: {
       type: PropTypes.Length,
       default: '100%',
