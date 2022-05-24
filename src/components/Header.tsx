@@ -68,6 +68,7 @@ const Container = styled.header<{ width?: string | string[] }>`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
   ${styleProps({
     width: 'width',
     height: 'min-height',

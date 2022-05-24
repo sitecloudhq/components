@@ -8,7 +8,8 @@ import { Component } from '../Component';
 
 const Container = styled.p`
   ${(props: any) => props.styled}
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
 
   ${({ borderWidth, borderColor }: any) =>
     borderWidth || borderColor ? `border-style: solid` : null};

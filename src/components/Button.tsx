@@ -8,7 +8,9 @@ import { Component } from '../Component';
 
 const StyledButton = styled.button`
   ${(props: any) => props.styled}
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
+
   border: 0;
   &:hover {
     cursor: pointer;

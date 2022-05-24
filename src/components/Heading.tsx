@@ -8,7 +8,9 @@ import { Component } from '../Component';
 
 const setBase = css`
   ${(props: any) => props.styled}
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
+
   ${styleProps({
     color: 'color',
     opacity: 'opacity',
