@@ -17,11 +17,11 @@ const Container = styled.img`
     shadowColor,
     shadowHorizontal,
     shadowVertical,
-    blur,
-    spread
+    shadowBlur,
+    shadowSpread
   }: any) =>
     shadowColor
-      ? `${shadowHorizontal} ${shadowVertical} ${blur} ${spread} ${shadowColor}`
+      ? `${shadowHorizontal} ${shadowVertical} ${shadowBlur} ${shadowSpread} ${shadowColor}`
       : 'none'};
 
   ${styleProps({
@@ -163,7 +163,7 @@ Image.props = {
           title: 'Vertical'
         }
       },
-      blur: {
+      shadowBlur: {
         type: PropTypes.Length,
         default: '0px',
         editor: {
@@ -171,7 +171,7 @@ Image.props = {
           title: 'Blur'
         }
       },
-      spread: {
+      shadowSpread: {
         type: PropTypes.Length,
         default: '0px',
         editor: {
