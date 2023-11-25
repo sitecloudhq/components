@@ -4,8 +4,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
 import typescript from '@rollup/plugin-typescript';
 
-import pkg from './package.json';
-
 const input = './src/index.ts';
 const minifyExtension = (pathToFile) => pathToFile.replace(/\.js$/, '.min.js');
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
@@ -13,31 +11,21 @@ const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 export default [
   {
     input,
+    external: ['react', 'styled-components'], // Avoid bundling peer dependencies
     plugins: [
-      babel({
-        exclude: 'node_modules/**',
-        extensions
-      }),
       external(),
       resolve({
         extensions
       }),
-      commonjs(),
+      commonjs({
+        include: /node_modules/
+      }),
+      babel({
+        exclude: 'node_modules/**',
+        extensions
+      }),
       typescript()
     ],
-    output: [
-      {
-        sourcemap: true,
-        file: pkg.umd,
-        format: 'umd',
-        name: 'sitecloud-components',
-        globals: {
-          react: 'React',
-          'styled-components': 'styled',
-          'react-is': 'reactIs'
-        }
-      },
-      { file: pkg.module, format: 'es' }
-    ]
+    output: [{ file: 'lib/index.es.js', format: 'es' }]
   }
 ];
