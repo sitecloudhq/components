@@ -11,8 +11,18 @@ const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 export default [
   {
     input,
+    onwarn: (warning, warn) => {
+      if (warning.code === 'PLUGIN_WARNING') {
+        return;
+      }
+      warn(warning);
+    },
     external: ['react', 'styled-components'], // Avoid bundling peer dependencies
     plugins: [
+      babel({
+        exclude: 'node_modules/**',
+        extensions
+      }),
       external(),
       resolve({
         extensions
@@ -20,12 +30,22 @@ export default [
       commonjs({
         include: /node_modules/
       }),
-      babel({
-        exclude: 'node_modules/**',
-        extensions
-      }),
       typescript()
     ],
-    output: [{ file: 'lib/index.es.js', format: 'es' }]
+    output: [
+      {
+        sourcemap: true,
+        file: pkg.umd,
+        format: 'umd',
+        name: '@sitecloud/components',
+        globals: {
+          react: 'React',
+          'styled-components': 'styled',
+          'react-is': 'reactIs'
+        },
+        interop: 'compat'
+      },
+      { file: 'lib/index.es.js', format: 'es' }
+    ]
   }
 ];
